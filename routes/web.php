@@ -18,6 +18,24 @@ Route::prefix('donations')->group(function () {
     })->name('donations.show');
 });
 
+//regions
+Route::prefix('regions')->group(function () {
+    Route::get('/', function () {
+        return view('regions.index');
+    })->name('regions.index');
+    Route::get('/{id}', function () {
+        return view('regions.show');
+    })->name('regions.show');
+    Route::get('/teams', function () {
+        return view('regions.teams');
+    })->name('regions.teams');
+    Route::get('/players', function () {
+        return view('regions.players');
+    })->name('regions.players');
+    Route::get('/academies', function () {
+        return view('regions.academies');
+    })->name('regions.academies');
+});
 //league
 Route::prefix('leagues')->group(function () {
     Route::get('/', function () {
@@ -36,6 +54,9 @@ Route::prefix('teams')->group(function () {
     Route::get('/{id}', function () {
         return view('teams.show');
     })->name('teams.show');
+    Route::get('/ranking', function () {
+        return view('teams.ranking');
+    })->name('teams.ranking');
 });
 
 // clubs
@@ -66,6 +87,60 @@ Route::prefix('players')->group(function () {
     Route::get('/{id}', function () {
         return view('players.show');
     })->name('players.show');
+    Route::get('/ranking', function () {
+        return view('players.ranking');
+    })->name('players.ranking');
+    Route::get('/scouts', function () {
+        return view('players.scouts');
+    })->name('players.scouts');
+});
+
+// Coaches
+Route::prefix('coaches')->group(function () {
+    Route::get('/', function () {
+        return view('coaches.index');
+    })->name('coaches.index');
+    Route::get('/{id}', function () {
+        return view('coaches.show');
+    })->name('coaches.show');
+    Route::get('/ranking', function () {
+        return view('coaches.ranking');
+    })->name('coaches.ranking');
+    Route::get('/courses', function () {
+        return view('coaches.courses');
+    })->name('coaches.courses');
+});
+
+// Referees
+Route::prefix('referees')->group(function () {
+    Route::get('/', function () {
+        return view('referees.index');
+    })->name('referees.index');
+    Route::get('/{id}', function () {
+        return view('referees.show');
+    })->name('referees.show');
+    Route::get('/ranking', function () {
+        return view('referees.ranking');
+    })->name('referees.ranking');
+    Route::get('/training', function () {
+        return view('referees.training');
+    })->name('referees.training');
+});
+
+// Sponsors
+Route::prefix('sponsors')->group(function () {
+    Route::get('/', function () {
+        return view('sponsors.index');
+    })->name('sponsors.index');
+    Route::get('/{id}', function () {
+        return view('sponsors.show');
+    })->name('sponsors.show');
+    Route::get('/become', function () {
+        return view('sponsors.become');
+    })->name('sponsors.become');
+    Route::get('/packages', function () {
+        return view('sponsors.packages');
+    })->name('sponsors.packages');
 });
 
 // Videos
