@@ -10,7 +10,7 @@
     "NODE_ENV": "production"
   },
   "functions": {
-    "api/src/index.ts": {
+    "src/index.ts": {
       "maxDuration": 10
     }
   }
