@@ -30,6 +30,18 @@ export declare const academies: import("drizzle-orm/pg-core").PgTableWithColumns
             enumValues: [string, ...string[]];
             baseColumn: never;
         }, {}, {}>;
+        name_en: import("drizzle-orm/pg-core").PgColumn<{
+            name: "name_en";
+            tableName: "academies";
+            dataType: "string";
+            columnType: "PgVarchar";
+            data: string;
+            driverParam: string;
+            notNull: false;
+            hasDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
         governorate: import("drizzle-orm/pg-core").PgColumn<{
             name: "governorate";
             tableName: "academies";
@@ -38,6 +50,18 @@ export declare const academies: import("drizzle-orm/pg-core").PgTableWithColumns
             data: "القاهرة" | "الإسكندرية" | "الجيزة" | "الشرقية" | "الدقهلية" | "البحيرة" | "المنوفية" | "الغربية" | "كفر الشيخ" | "الأقصر" | "أسوان" | "قنا" | "سوهاج" | "أسيوط" | "المنيا" | "الفيوم" | "بني سويف" | "القليوبية" | "الإسماعيلية" | "السويس" | "بورسعيد" | "دمياط" | "شمال سيناء" | "جنوب سيناء" | "مطروح" | "البحر الأحمر" | "الوادي الجديد";
             driverParam: string;
             notNull: true;
+            hasDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
+        city: import("drizzle-orm/pg-core").PgColumn<{
+            name: "city";
+            tableName: "academies";
+            dataType: "string";
+            columnType: "PgVarchar";
+            data: string;
+            driverParam: string;
+            notNull: false;
             hasDefault: false;
             enumValues: [string, ...string[]];
             baseColumn: never;
@@ -64,6 +88,54 @@ export declare const academies: import("drizzle-orm/pg-core").PgTableWithColumns
             notNull: false;
             hasDefault: false;
             enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
+        phone: import("drizzle-orm/pg-core").PgColumn<{
+            name: "phone";
+            tableName: "academies";
+            dataType: "string";
+            columnType: "PgVarchar";
+            data: string;
+            driverParam: string;
+            notNull: false;
+            hasDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
+        email: import("drizzle-orm/pg-core").PgColumn<{
+            name: "email";
+            tableName: "academies";
+            dataType: "string";
+            columnType: "PgVarchar";
+            data: string;
+            driverParam: string;
+            notNull: false;
+            hasDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
+        website: import("drizzle-orm/pg-core").PgColumn<{
+            name: "website";
+            tableName: "academies";
+            dataType: "string";
+            columnType: "PgVarchar";
+            data: string;
+            driverParam: string;
+            notNull: false;
+            hasDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
+        established_year: import("drizzle-orm/pg-core").PgColumn<{
+            name: "established_year";
+            tableName: "academies";
+            dataType: "number";
+            columnType: "PgInteger";
+            data: number;
+            driverParam: string | number;
+            notNull: false;
+            hasDefault: false;
+            enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
         latitude: import("drizzle-orm/pg-core").PgColumn<{
@@ -121,8 +193,32 @@ export declare const academies: import("drizzle-orm/pg-core").PgTableWithColumns
             columnType: "PgUUID";
             data: string;
             driverParam: string;
-            notNull: true;
+            notNull: false;
             hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        created_by: import("drizzle-orm/pg-core").PgColumn<{
+            name: "created_by";
+            tableName: "academies";
+            dataType: "string";
+            columnType: "PgUUID";
+            data: string;
+            driverParam: string;
+            notNull: false;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        is_active: import("drizzle-orm/pg-core").PgColumn<{
+            name: "is_active";
+            tableName: "academies";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: false;
+            hasDefault: true;
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;

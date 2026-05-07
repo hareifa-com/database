@@ -7,8 +7,14 @@ import { Router } from 'express';
 import { z } from 'zod';
 import { db } from '@hareifa/database';
 import { academies, users, players } from '@hareifa/database/schema';
-import { eq, and, desc, count, ilike } from 'drizzle-orm';
-import { authMiddleware, requirePermission } from '../middleware/auth.js';
+import { eq, and, desc, count, ilike, gte, sql } from 'drizzle-orm';
+import { authMiddleware, requirePermission, AuthenticatedRequest } from '../middleware/auth.js';
+
+// Type definition for Egyptian governorates
+type EgyptianGovernorate = 'القاهرة' | 'الإسكندرية' | 'الجيزة' | 'الشرقية' | 'الدقهلية' | 'البحيرة' | 'المنوفية' | 'الغربية' | 'كفر الشيخ' | 'الأقصر' | 'أسوان' | 'قنا' | 'سوهاج' | 'أسيوط' | 'المنيا' | 'الفيوم' | 'بني سويف' | 'القليوبية' | 'الإسماعيلية' | 'السويس' | 'بورسعيد' | 'دمياط' | 'شمال سيناء' | 'جنوب سيناء' | 'مطروح' | 'البحر الأحمر' | 'الوادي الجديد';
+
+// Type definition for academy types
+type AcademyType = 'مركز_شباب' | 'اكاديمية' | 'نادي' | 'مدرسة';
 
 const router = Router();
 
@@ -34,15 +40,15 @@ router.get('/', async (req, res, next) => {
     const where = [];
     
     if (governorate) {
-      where.push(eq(academies.governorate, governorate as string));
+      where.push(eq(academies.governorate, governorate as EgyptianGovernorate));
     }
     
     if (type) {
-      where.push(eq(academies.type, type as string));
+      where.push(eq(academies.type, type as AcademyType));
     }
     
     if (is_active !== undefined) {
-      where.push(eq(academies.is_active, is_active === 'true'));
+      where.push(eq(academies.status, is_active === 'true' ? 'نشط' : 'موقوف'));
     }
     
     if (search) {
@@ -62,8 +68,8 @@ router.get('/', async (req, res, next) => {
         email: academies.email,
         website: academies.website,
         established_year: academies.established_year,
-        is_active: academies.is_active,
-        is_verified: academies.is_verified,
+        status: academies.status,
+        verified: academies.verified,
         created_at: academies.created_at,
         updated_at: academies.updated_at,
       })
@@ -117,7 +123,7 @@ router.get('/:id', async (req, res, next) => {
     const manager = await db
       .select({
         id: users.id,
-        full_name_ar: users.full_name_ar,
+        full_name: users.full_name,
         email: users.email,
         phone: users.phone,
       })
@@ -135,7 +141,7 @@ router.get('/:id', async (req, res, next) => {
       .from(players)
       .where(and(
         eq(players.academy_id, id),
-        eq(players.is_active, true)
+        eq(players.status, 'active')
       ));
     
     res.json({
@@ -152,7 +158,7 @@ router.get('/:id', async (req, res, next) => {
  * POST /api/v1/academies
  * Create new academy
  */
-router.post('/', requirePermission(['manage_academies']), async (req, res, next) => {
+router.post('/', requirePermission(['manage_academies']), async (req: AuthenticatedRequest, res, next) => {
   try {
     const academyData = req.body;
     
@@ -175,8 +181,8 @@ router.post('/', requirePermission(['manage_academies']), async (req, res, next)
     const newAcademy = await db.insert(academies).values({
       ...academyData,
       created_by: req.user!.id,
-      is_active: true,
-      is_verified: false,
+      status: 'نشط',
+      verified: false,
       created_at: new Date(),
       updated_at: new Date(),
     }).returning();
@@ -242,7 +248,7 @@ router.delete('/:id', requirePermission(['manage_academies']), async (req, res, 
     const deactivatedAcademy = await db
       .update(academies)
       .set({ 
-        is_active: false,
+        status: 'موقوف',
         updated_at: new Date(),
       })
       .where(eq(academies.id, id))
@@ -268,16 +274,16 @@ router.delete('/:id', requirePermission(['manage_academies']), async (req, res, 
  * POST /api/v1/academies/:id/verify
  * Verify academy (admin only)
  */
-router.post('/:id/verify', requirePermission(['verify_academies']), async (req, res, next) => {
+router.post('/:id/verify', requirePermission(['verify_academies']), async (req: AuthenticatedRequest, res, next) => {
   try {
     const { id } = req.params;
     
     const verifiedAcademy = await db
       .update(academies)
       .set({ 
-        is_verified: true,
-        verified_at: new Date(),
-        verified_by: req.user!.id,
+        verified: true,
+        reviewed_at: new Date(),
+        reviewer_id: req.user!.id,
         updated_at: new Date(),
       })
       .where(eq(academies.id, id))
@@ -337,7 +343,7 @@ router.get('/:id/players', async (req, res, next) => {
       .from(players)
       .where(and(
         eq(players.academy_id, id),
-        eq(players.is_active, true)
+        eq(players.status, 'active')
       ))
       .orderBy(desc(players.created_at))
       .limit(Number(limit))
@@ -348,7 +354,7 @@ router.get('/:id/players', async (req, res, next) => {
       .from(players)
       .where(and(
         eq(players.academy_id, id),
-        eq(players.is_active, true)
+        eq(players.status, 'active')
       ));
     
     res.json({
@@ -389,15 +395,15 @@ router.get('/search', async (req, res, next) => {
     
     const where = [
       ilike(academies.name_ar, `%${query}%`),
-      eq(academies.is_active, true)
+      eq(academies.status, 'نشط')
     ];
     
     if (governorate) {
-      where.push(eq(academies.governorate, governorate as string));
+      where.push(eq(academies.governorate, governorate as EgyptianGovernorate));
     }
     
     if (type) {
-      where.push(eq(academies.type, type as string));
+      where.push(eq(academies.type, type as AcademyType));
     }
     
     const searchResults = await db
@@ -407,12 +413,12 @@ router.get('/search', async (req, res, next) => {
         type: academies.type,
         governorate: academies.governorate,
         city: academies.city,
-        is_verified: academies.is_verified,
+        verified: academies.verified,
         established_year: academies.established_year,
       })
       .from(academies)
       .where(and(...where))
-      .orderBy(desc(academies.is_verified))
+      .orderBy(desc(academies.verified))
       .limit(Number(limit))
       .offset((Number(page) - 1) * Number(limit));
     
@@ -451,13 +457,13 @@ router.get('/stats', requirePermission(['view_analytics']), async (req, res, nex
     const activeAcademies = await db
       .select({ count: count() })
       .from(academies)
-      .where(eq(academies.is_active, true));
+      .where(eq(academies.status, 'نشط'));
     
     // Verified academies
     const verifiedAcademies = await db
       .select({ count: count() })
       .from(academies)
-      .where(eq(academies.is_verified, true));
+      .where(eq(academies.verified, true));
     
     // Academies by type
     const academiesByType = await db
@@ -477,11 +483,11 @@ router.get('/stats', requirePermission(['view_analytics']), async (req, res, nex
       })
       .from(academies)
       .where(and(
-        eq(academies.is_active, true),
+        eq(academies.status, 'نشط'),
         eq(academies.governorate, academies.governorate)
       ))
       .groupBy(academies.governorate)
-      .orderBy(desc(count))
+      .orderBy(desc(sql`count`))
       .limit(10);
     
     // New academies this month
@@ -491,8 +497,8 @@ router.get('/stats', requirePermission(['view_analytics']), async (req, res, nex
       .select({ count: count() })
       .from(academies)
       .where(and(
-        eq(academies.is_active, true),
-        academies.created_at >= thisMonth
+        eq(academies.status, 'نشط'),
+        gte(academies.created_at, thisMonth)
       ));
     
     res.json({

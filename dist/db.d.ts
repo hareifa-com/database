@@ -7,11 +7,11 @@ declare const pool: Pool;
  * Drizzle ORM instance with schema
  */
 export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
-    users: import("drizzle-orm/pg-core/table.js").PgTableWithColumns<{
+    users: import("drizzle-orm/pg-core").PgTableWithColumns<{
         name: "users";
         schema: undefined;
         columns: {
-            id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "id";
                 tableName: "users";
                 dataType: "string";
@@ -23,7 +23,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            full_name: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            full_name: import("drizzle-orm/pg-core").PgColumn<{
                 name: "full_name";
                 tableName: "users";
                 dataType: "string";
@@ -35,7 +35,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            email: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            email: import("drizzle-orm/pg-core").PgColumn<{
                 name: "email";
                 tableName: "users";
                 dataType: "string";
@@ -47,7 +47,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            phone: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            phone: import("drizzle-orm/pg-core").PgColumn<{
                 name: "phone";
                 tableName: "users";
                 dataType: "string";
@@ -59,7 +59,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            password_hash: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            password_hash: import("drizzle-orm/pg-core").PgColumn<{
                 name: "password_hash";
                 tableName: "users";
                 dataType: "string";
@@ -71,7 +71,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            role: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            role: import("drizzle-orm/pg-core").PgColumn<{
                 name: "role";
                 tableName: "users";
                 dataType: "string";
@@ -83,7 +83,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            governorate: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            governorate: import("drizzle-orm/pg-core").PgColumn<{
                 name: "governorate";
                 tableName: "users";
                 dataType: "string";
@@ -95,7 +95,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            academy_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            academy_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "academy_id";
                 tableName: "users";
                 dataType: "string";
@@ -107,7 +107,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            avatar_url: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            avatar_url: import("drizzle-orm/pg-core").PgColumn<{
                 name: "avatar_url";
                 tableName: "users";
                 dataType: "string";
@@ -119,7 +119,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            bio: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            bio: import("drizzle-orm/pg-core").PgColumn<{
                 name: "bio";
                 tableName: "users";
                 dataType: "string";
@@ -131,7 +131,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            verified: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            verified: import("drizzle-orm/pg-core").PgColumn<{
                 name: "verified";
                 tableName: "users";
                 dataType: "boolean";
@@ -143,7 +143,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            is_active: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            is_active: import("drizzle-orm/pg-core").PgColumn<{
                 name: "is_active";
                 tableName: "users";
                 dataType: "boolean";
@@ -155,7 +155,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            created_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "created_at";
                 tableName: "users";
                 dataType: "date";
@@ -167,7 +167,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            updated_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "updated_at";
                 tableName: "users";
                 dataType: "date";
@@ -182,11 +182,11 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
         };
         dialect: "pg";
     }>;
-    academies: import("drizzle-orm/pg-core/table.js").PgTableWithColumns<{
+    academies: import("drizzle-orm/pg-core").PgTableWithColumns<{
         name: "academies";
         schema: undefined;
         columns: {
-            id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "id";
                 tableName: "academies";
                 dataType: "string";
@@ -198,7 +198,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            name_ar: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            name_ar: import("drizzle-orm/pg-core").PgColumn<{
                 name: "name_ar";
                 tableName: "academies";
                 dataType: "string";
@@ -210,7 +210,19 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            governorate: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            name_en: import("drizzle-orm/pg-core").PgColumn<{
+                name: "name_en";
+                tableName: "academies";
+                dataType: "string";
+                columnType: "PgVarchar";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            governorate: import("drizzle-orm/pg-core").PgColumn<{
                 name: "governorate";
                 tableName: "academies";
                 dataType: "string";
@@ -222,7 +234,19 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            type: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            city: import("drizzle-orm/pg-core").PgColumn<{
+                name: "city";
+                tableName: "academies";
+                dataType: "string";
+                columnType: "PgVarchar";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            type: import("drizzle-orm/pg-core").PgColumn<{
                 name: "type";
                 tableName: "academies";
                 dataType: "string";
@@ -234,7 +258,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            address: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            address: import("drizzle-orm/pg-core").PgColumn<{
                 name: "address";
                 tableName: "academies";
                 dataType: "string";
@@ -246,7 +270,55 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            latitude: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            phone: import("drizzle-orm/pg-core").PgColumn<{
+                name: "phone";
+                tableName: "academies";
+                dataType: "string";
+                columnType: "PgVarchar";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            email: import("drizzle-orm/pg-core").PgColumn<{
+                name: "email";
+                tableName: "academies";
+                dataType: "string";
+                columnType: "PgVarchar";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            website: import("drizzle-orm/pg-core").PgColumn<{
+                name: "website";
+                tableName: "academies";
+                dataType: "string";
+                columnType: "PgVarchar";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            established_year: import("drizzle-orm/pg-core").PgColumn<{
+                name: "established_year";
+                tableName: "academies";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            latitude: import("drizzle-orm/pg-core").PgColumn<{
                 name: "latitude";
                 tableName: "academies";
                 dataType: "string";
@@ -258,7 +330,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            longitude: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            longitude: import("drizzle-orm/pg-core").PgColumn<{
                 name: "longitude";
                 tableName: "academies";
                 dataType: "string";
@@ -270,7 +342,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            coach_name: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            coach_name: import("drizzle-orm/pg-core").PgColumn<{
                 name: "coach_name";
                 tableName: "academies";
                 dataType: "string";
@@ -282,7 +354,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            coach_phone: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            coach_phone: import("drizzle-orm/pg-core").PgColumn<{
                 name: "coach_phone";
                 tableName: "academies";
                 dataType: "string";
@@ -294,19 +366,43 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            manager_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            manager_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "manager_id";
                 tableName: "academies";
                 dataType: "string";
                 columnType: "PgUUID";
                 data: string;
                 driverParam: string;
-                notNull: true;
+                notNull: false;
                 hasDefault: false;
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            status: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            created_by: import("drizzle-orm/pg-core").PgColumn<{
+                name: "created_by";
+                tableName: "academies";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            is_active: import("drizzle-orm/pg-core").PgColumn<{
+                name: "is_active";
+                tableName: "academies";
+                dataType: "boolean";
+                columnType: "PgBoolean";
+                data: boolean;
+                driverParam: boolean;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            status: import("drizzle-orm/pg-core").PgColumn<{
                 name: "status";
                 tableName: "academies";
                 dataType: "string";
@@ -318,7 +414,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            verified: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            verified: import("drizzle-orm/pg-core").PgColumn<{
                 name: "verified";
                 tableName: "academies";
                 dataType: "boolean";
@@ -330,7 +426,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            reviewer_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            reviewer_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "reviewer_id";
                 tableName: "academies";
                 dataType: "string";
@@ -342,7 +438,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            review_notes: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            review_notes: import("drizzle-orm/pg-core").PgColumn<{
                 name: "review_notes";
                 tableName: "academies";
                 dataType: "string";
@@ -354,7 +450,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            reviewed_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            reviewed_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "reviewed_at";
                 tableName: "academies";
                 dataType: "date";
@@ -366,7 +462,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            created_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "created_at";
                 tableName: "academies";
                 dataType: "date";
@@ -378,7 +474,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            updated_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "updated_at";
                 tableName: "academies";
                 dataType: "date";
@@ -393,11 +489,11 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
         };
         dialect: "pg";
     }>;
-    players: import("drizzle-orm/pg-core/table.js").PgTableWithColumns<{
+    players: import("drizzle-orm/pg-core").PgTableWithColumns<{
         name: "players";
         schema: undefined;
         columns: {
-            id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "id";
                 tableName: "players";
                 dataType: "string";
@@ -409,7 +505,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            full_name_ar: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            full_name_ar: import("drizzle-orm/pg-core").PgColumn<{
                 name: "full_name_ar";
                 tableName: "players";
                 dataType: "string";
@@ -421,7 +517,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            birth_date: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            birth_date: import("drizzle-orm/pg-core").PgColumn<{
                 name: "birth_date";
                 tableName: "players";
                 dataType: "string";
@@ -433,7 +529,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            birth_place: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            birth_place: import("drizzle-orm/pg-core").PgColumn<{
                 name: "birth_place";
                 tableName: "players";
                 dataType: "string";
@@ -445,7 +541,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            governorate: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            governorate: import("drizzle-orm/pg-core").PgColumn<{
                 name: "governorate";
                 tableName: "players";
                 dataType: "string";
@@ -457,7 +553,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            academy_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            academy_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "academy_id";
                 tableName: "players";
                 dataType: "string";
@@ -469,7 +565,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            height_cm: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            height_cm: import("drizzle-orm/pg-core").PgColumn<{
                 name: "height_cm";
                 tableName: "players";
                 dataType: "string";
@@ -481,7 +577,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            weight_kg: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            weight_kg: import("drizzle-orm/pg-core").PgColumn<{
                 name: "weight_kg";
                 tableName: "players";
                 dataType: "string";
@@ -493,7 +589,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            dominant_foot: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            dominant_foot: import("drizzle-orm/pg-core").PgColumn<{
                 name: "dominant_foot";
                 tableName: "players";
                 dataType: "string";
@@ -505,7 +601,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            primary_position: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            primary_position: import("drizzle-orm/pg-core").PgColumn<{
                 name: "primary_position";
                 tableName: "players";
                 dataType: "string";
@@ -517,7 +613,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            secondary_position: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            secondary_position: import("drizzle-orm/pg-core").PgColumn<{
                 name: "secondary_position";
                 tableName: "players";
                 dataType: "string";
@@ -529,7 +625,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            bio: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            bio: import("drizzle-orm/pg-core").PgColumn<{
                 name: "bio";
                 tableName: "players";
                 dataType: "string";
@@ -541,7 +637,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            family_status: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            family_status: import("drizzle-orm/pg-core").PgColumn<{
                 name: "family_status";
                 tableName: "players";
                 dataType: "string";
@@ -553,7 +649,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            daily_travel_to_training: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            daily_travel_to_training: import("drizzle-orm/pg-core").PgColumn<{
                 name: "daily_travel_to_training";
                 tableName: "players";
                 dataType: "string";
@@ -565,7 +661,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            school_performance: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            school_performance: import("drizzle-orm/pg-core").PgColumn<{
                 name: "school_performance";
                 tableName: "players";
                 dataType: "string";
@@ -577,7 +673,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            scout_story: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            scout_story: import("drizzle-orm/pg-core").PgColumn<{
                 name: "scout_story";
                 tableName: "players";
                 dataType: "string";
@@ -589,7 +685,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            latitude: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            latitude: import("drizzle-orm/pg-core").PgColumn<{
                 name: "latitude";
                 tableName: "players";
                 dataType: "string";
@@ -601,7 +697,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            longitude: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            longitude: import("drizzle-orm/pg-core").PgColumn<{
                 name: "longitude";
                 tableName: "players";
                 dataType: "string";
@@ -613,7 +709,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            status: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            status: import("drizzle-orm/pg-core").PgColumn<{
                 name: "status";
                 tableName: "players";
                 dataType: "string";
@@ -625,7 +721,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            created_by: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            created_by: import("drizzle-orm/pg-core").PgColumn<{
                 name: "created_by";
                 tableName: "players";
                 dataType: "string";
@@ -637,7 +733,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            created_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "created_at";
                 tableName: "players";
                 dataType: "date";
@@ -649,7 +745,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            updated_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "updated_at";
                 tableName: "players";
                 dataType: "date";
@@ -664,11 +760,11 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
         };
         dialect: "pg";
     }>;
-    evaluations: import("drizzle-orm/pg-core/table.js").PgTableWithColumns<{
+    evaluations: import("drizzle-orm/pg-core").PgTableWithColumns<{
         name: "evaluations";
         schema: undefined;
         columns: {
-            id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "id";
                 tableName: "evaluations";
                 dataType: "string";
@@ -680,7 +776,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            player_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            player_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "player_id";
                 tableName: "evaluations";
                 dataType: "string";
@@ -692,7 +788,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            evaluator_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            evaluator_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "evaluator_id";
                 tableName: "evaluations";
                 dataType: "string";
@@ -704,7 +800,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            evaluator_role: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            evaluator_role: import("drizzle-orm/pg-core").PgColumn<{
                 name: "evaluator_role";
                 tableName: "evaluations";
                 dataType: "string";
@@ -716,7 +812,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            evaluation_type: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            evaluation_type: import("drizzle-orm/pg-core").PgColumn<{
                 name: "evaluation_type";
                 tableName: "evaluations";
                 dataType: "string";
@@ -728,7 +824,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            event_name: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            event_name: import("drizzle-orm/pg-core").PgColumn<{
                 name: "event_name";
                 tableName: "evaluations";
                 dataType: "string";
@@ -740,7 +836,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            event_date: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            event_date: import("drizzle-orm/pg-core").PgColumn<{
                 name: "event_date";
                 tableName: "evaluations";
                 dataType: "string";
@@ -752,7 +848,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            minutes_watched: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            minutes_watched: import("drizzle-orm/pg-core").PgColumn<{
                 name: "minutes_watched";
                 tableName: "evaluations";
                 dataType: "number";
@@ -764,7 +860,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            technical_skills: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            technical_skills: import("drizzle-orm/pg-core").PgColumn<{
                 name: "technical_skills";
                 tableName: "evaluations";
                 dataType: "json";
@@ -783,7 +879,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            physical_attributes: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            physical_attributes: import("drizzle-orm/pg-core").PgColumn<{
                 name: "physical_attributes";
                 tableName: "evaluations";
                 dataType: "json";
@@ -800,7 +896,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            mental_attributes: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            mental_attributes: import("drizzle-orm/pg-core").PgColumn<{
                 name: "mental_attributes";
                 tableName: "evaluations";
                 dataType: "json";
@@ -817,7 +913,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            commitment: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            commitment: import("drizzle-orm/pg-core").PgColumn<{
                 name: "commitment";
                 tableName: "evaluations";
                 dataType: "json";
@@ -833,7 +929,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            overall_potential: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            overall_potential: import("drizzle-orm/pg-core").PgColumn<{
                 name: "overall_potential";
                 tableName: "evaluations";
                 dataType: "string";
@@ -845,7 +941,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            strengths: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            strengths: import("drizzle-orm/pg-core").PgColumn<{
                 name: "strengths";
                 tableName: "evaluations";
                 dataType: "string";
@@ -857,7 +953,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            weaknesses: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            weaknesses: import("drizzle-orm/pg-core").PgColumn<{
                 name: "weaknesses";
                 tableName: "evaluations";
                 dataType: "string";
@@ -869,7 +965,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            scout_notes: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            scout_notes: import("drizzle-orm/pg-core").PgColumn<{
                 name: "scout_notes";
                 tableName: "evaluations";
                 dataType: "string";
@@ -881,7 +977,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            video_url: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            video_url: import("drizzle-orm/pg-core").PgColumn<{
                 name: "video_url";
                 tableName: "evaluations";
                 dataType: "string";
@@ -893,7 +989,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            weight: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            weight: import("drizzle-orm/pg-core").PgColumn<{
                 name: "weight";
                 tableName: "evaluations";
                 dataType: "number";
@@ -905,7 +1001,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            status: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            status: import("drizzle-orm/pg-core").PgColumn<{
                 name: "status";
                 tableName: "evaluations";
                 dataType: "string";
@@ -917,7 +1013,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            reviewed_by: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            reviewed_by: import("drizzle-orm/pg-core").PgColumn<{
                 name: "reviewed_by";
                 tableName: "evaluations";
                 dataType: "string";
@@ -929,7 +1025,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            review_notes: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            review_notes: import("drizzle-orm/pg-core").PgColumn<{
                 name: "review_notes";
                 tableName: "evaluations";
                 dataType: "string";
@@ -941,7 +1037,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            created_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "created_at";
                 tableName: "evaluations";
                 dataType: "date";
@@ -956,11 +1052,11 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
         };
         dialect: "pg";
     }>;
-    coachNotes: import("drizzle-orm/pg-core/table.js").PgTableWithColumns<{
+    coachNotes: import("drizzle-orm/pg-core").PgTableWithColumns<{
         name: "coach_notes";
         schema: undefined;
         columns: {
-            id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "id";
                 tableName: "coach_notes";
                 dataType: "string";
@@ -972,7 +1068,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            player_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            player_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "player_id";
                 tableName: "coach_notes";
                 dataType: "string";
@@ -984,7 +1080,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            coach_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            coach_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "coach_id";
                 tableName: "coach_notes";
                 dataType: "string";
@@ -996,7 +1092,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            note_date: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            note_date: import("drizzle-orm/pg-core").PgColumn<{
                 name: "note_date";
                 tableName: "coach_notes";
                 dataType: "string";
@@ -1008,7 +1104,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            attendance: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            attendance: import("drizzle-orm/pg-core").PgColumn<{
                 name: "attendance";
                 tableName: "coach_notes";
                 dataType: "string";
@@ -1020,7 +1116,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            performance_rating: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            performance_rating: import("drizzle-orm/pg-core").PgColumn<{
                 name: "performance_rating";
                 tableName: "coach_notes";
                 dataType: "number";
@@ -1032,7 +1128,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            note: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            note: import("drizzle-orm/pg-core").PgColumn<{
                 name: "note";
                 tableName: "coach_notes";
                 dataType: "string";
@@ -1044,7 +1140,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            created_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "created_at";
                 tableName: "coach_notes";
                 dataType: "date";
@@ -1059,11 +1155,11 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
         };
         dialect: "pg";
     }>;
-    playerVideos: import("drizzle-orm/pg-core/table.js").PgTableWithColumns<{
+    playerVideos: import("drizzle-orm/pg-core").PgTableWithColumns<{
         name: "player_videos";
         schema: undefined;
         columns: {
-            id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "id";
                 tableName: "player_videos";
                 dataType: "string";
@@ -1075,7 +1171,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            player_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            player_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "player_id";
                 tableName: "player_videos";
                 dataType: "string";
@@ -1087,7 +1183,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            title: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            title: import("drizzle-orm/pg-core").PgColumn<{
                 name: "title";
                 tableName: "player_videos";
                 dataType: "string";
@@ -1099,7 +1195,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            youtube_url: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            youtube_url: import("drizzle-orm/pg-core").PgColumn<{
                 name: "youtube_url";
                 tableName: "player_videos";
                 dataType: "string";
@@ -1111,7 +1207,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            youtube_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            youtube_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "youtube_id";
                 tableName: "player_videos";
                 dataType: "string";
@@ -1123,7 +1219,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            thumbnail_url: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            thumbnail_url: import("drizzle-orm/pg-core").PgColumn<{
                 name: "thumbnail_url";
                 tableName: "player_videos";
                 dataType: "string";
@@ -1135,7 +1231,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: [string, ...string[]];
                 baseColumn: never;
             }, {}, {}>;
-            duration_seconds: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            duration_seconds: import("drizzle-orm/pg-core").PgColumn<{
                 name: "duration_seconds";
                 tableName: "player_videos";
                 dataType: "number";
@@ -1147,7 +1243,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            tags: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            tags: import("drizzle-orm/pg-core").PgColumn<{
                 name: "tags";
                 tableName: "player_videos";
                 dataType: "array";
@@ -1170,7 +1266,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                     baseColumn: never;
                 }, object, object>;
             }, {}, {}>;
-            uploaded_by: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            uploaded_by: import("drizzle-orm/pg-core").PgColumn<{
                 name: "uploaded_by";
                 tableName: "player_videos";
                 dataType: "string";
@@ -1182,7 +1278,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            created_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "created_at";
                 tableName: "player_videos";
                 dataType: "date";
@@ -1197,11 +1293,11 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
         };
         dialect: "pg";
     }>;
-    playerStats: import("drizzle-orm/pg-core/table.js").PgTableWithColumns<{
+    playerStats: import("drizzle-orm/pg-core").PgTableWithColumns<{
         name: "player_stats";
         schema: undefined;
         columns: {
-            player_id: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            player_id: import("drizzle-orm/pg-core").PgColumn<{
                 name: "player_id";
                 tableName: "player_stats";
                 dataType: "string";
@@ -1213,7 +1309,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            total_evaluations: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            total_evaluations: import("drizzle-orm/pg-core").PgColumn<{
                 name: "total_evaluations";
                 tableName: "player_stats";
                 dataType: "number";
@@ -1225,7 +1321,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            avg_technical: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            avg_technical: import("drizzle-orm/pg-core").PgColumn<{
                 name: "avg_technical";
                 tableName: "player_stats";
                 dataType: "string";
@@ -1237,7 +1333,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            avg_physical: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            avg_physical: import("drizzle-orm/pg-core").PgColumn<{
                 name: "avg_physical";
                 tableName: "player_stats";
                 dataType: "string";
@@ -1249,7 +1345,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            avg_mental: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            avg_mental: import("drizzle-orm/pg-core").PgColumn<{
                 name: "avg_mental";
                 tableName: "player_stats";
                 dataType: "string";
@@ -1261,7 +1357,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            avg_commitment: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            avg_commitment: import("drizzle-orm/pg-core").PgColumn<{
                 name: "avg_commitment";
                 tableName: "player_stats";
                 dataType: "string";
@@ -1273,7 +1369,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            avg_overall: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            avg_overall: import("drizzle-orm/pg-core").PgColumn<{
                 name: "avg_overall";
                 tableName: "player_stats";
                 dataType: "string";
@@ -1285,7 +1381,7 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            last_evaluation_date: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            last_evaluation_date: import("drizzle-orm/pg-core").PgColumn<{
                 name: "last_evaluation_date";
                 tableName: "player_stats";
                 dataType: "string";
@@ -1297,9 +1393,1740 @@ export declare const db: import("drizzle-orm/node-postgres").NodePgDatabase<{
                 enumValues: undefined;
                 baseColumn: never;
             }, {}, {}>;
-            updated_at: import("drizzle-orm/pg-core/index.js").PgColumn<{
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
                 name: "updated_at";
                 tableName: "player_stats";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    communityReports: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "community_reports";
+        schema: undefined;
+        columns: {
+            id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "id";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            reporter_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reporter_id";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            reported_entity: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reported_entity";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            entity_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "entity_id";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            reason: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reason";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgEnumColumn";
+                data: "fake_info" | "bias" | "inappropriate" | "spam" | "harassment" | "duplicate" | "inaccurate" | "other";
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: ["fake_info", "bias", "inappropriate", "spam", "harassment", "duplicate", "inaccurate", "other"];
+                baseColumn: never;
+            }, {}, {}>;
+            description: import("drizzle-orm/pg-core").PgColumn<{
+                name: "description";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            evidence: import("drizzle-orm/pg-core").PgColumn<{
+                name: "evidence";
+                tableName: "community_reports";
+                dataType: "array";
+                columnType: "PgArray";
+                data: string[];
+                driverParam: string | string[];
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: import("drizzle-orm").Column<{
+                    name: "evidence";
+                    tableName: "community_reports";
+                    dataType: "string";
+                    columnType: "PgText";
+                    data: string;
+                    driverParam: string;
+                    notNull: false;
+                    hasDefault: false;
+                    enumValues: [string, ...string[]];
+                    baseColumn: never;
+                }, object, object>;
+            }, {}, {}>;
+            status: import("drizzle-orm/pg-core").PgColumn<{
+                name: "status";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgEnumColumn";
+                data: "pending" | "under_review" | "resolved" | "dismissed" | "escalated";
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: ["pending", "under_review", "resolved", "dismissed", "escalated"];
+                baseColumn: never;
+            }, {}, {}>;
+            moderator_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "moderator_id";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            resolution: import("drizzle-orm/pg-core").PgColumn<{
+                name: "resolution";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            actions_taken: import("drizzle-orm/pg-core").PgColumn<{
+                name: "actions_taken";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            priority: import("drizzle-orm/pg-core").PgColumn<{
+                name: "priority";
+                tableName: "community_reports";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "created_at";
+                tableName: "community_reports";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "updated_at";
+                tableName: "community_reports";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            resolved_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "resolved_at";
+                tableName: "community_reports";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    reputationScores: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "reputation_scores";
+        schema: undefined;
+        columns: {
+            user_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "user_id";
+                tableName: "reputation_scores";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            total_score: import("drizzle-orm/pg-core").PgColumn<{
+                name: "total_score";
+                tableName: "reputation_scores";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            level: import("drizzle-orm/pg-core").PgColumn<{
+                name: "level";
+                tableName: "reputation_scores";
+                dataType: "string";
+                columnType: "PgEnumColumn";
+                data: "newcomer" | "member" | "trusted" | "expert" | "leader" | "legend";
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: ["newcomer", "member", "trusted", "expert", "leader", "legend"];
+                baseColumn: never;
+            }, {}, {}>;
+            evaluation_quality: import("drizzle-orm/pg-core").PgColumn<{
+                name: "evaluation_quality";
+                tableName: "reputation_scores";
+                dataType: "string";
+                columnType: "PgNumeric";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            community_contribution: import("drizzle-orm/pg-core").PgColumn<{
+                name: "community_contribution";
+                tableName: "reputation_scores";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            verification_level: import("drizzle-orm/pg-core").PgColumn<{
+                name: "verification_level";
+                tableName: "reputation_scores";
+                dataType: "string";
+                columnType: "PgNumeric";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            dispute_history: import("drizzle-orm/pg-core").PgColumn<{
+                name: "dispute_history";
+                tableName: "reputation_scores";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            tenure_days: import("drizzle-orm/pg-core").PgColumn<{
+                name: "tenure_days";
+                tableName: "reputation_scores";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            total_contributions: import("drizzle-orm/pg-core").PgColumn<{
+                name: "total_contributions";
+                tableName: "reputation_scores";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            helpful_votes: import("drizzle-orm/pg-core").PgColumn<{
+                name: "helpful_votes";
+                tableName: "reputation_scores";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            accurate_reports: import("drizzle-orm/pg-core").PgColumn<{
+                name: "accurate_reports";
+                tableName: "reputation_scores";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "updated_at";
+                tableName: "reputation_scores";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    communityBadges: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "community_badges";
+        schema: undefined;
+        columns: {
+            id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "id";
+                tableName: "community_badges";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            user_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "user_id";
+                tableName: "community_badges";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            badge_type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "badge_type";
+                tableName: "community_badges";
+                dataType: "string";
+                columnType: "PgEnumColumn";
+                data: "trusted_scout" | "expert_evaluator" | "community_leader" | "verified_academy" | "top_contributor" | "helpful_member" | "quality_reviewer" | "mentor" | "pioneer" | "ambassador";
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: ["trusted_scout", "expert_evaluator", "community_leader", "verified_academy", "top_contributor", "helpful_member", "quality_reviewer", "mentor", "pioneer", "ambassador"];
+                baseColumn: never;
+            }, {}, {}>;
+            title_ar: import("drizzle-orm/pg-core").PgColumn<{
+                name: "title_ar";
+                tableName: "community_badges";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            description_ar: import("drizzle-orm/pg-core").PgColumn<{
+                name: "description_ar";
+                tableName: "community_badges";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            icon_url: import("drizzle-orm/pg-core").PgColumn<{
+                name: "icon_url";
+                tableName: "community_badges";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            earned_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "earned_at";
+                tableName: "community_badges";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            is_active: import("drizzle-orm/pg-core").PgColumn<{
+                name: "is_active";
+                tableName: "community_badges";
+                dataType: "boolean";
+                columnType: "PgBoolean";
+                data: boolean;
+                driverParam: boolean;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            reason: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reason";
+                tableName: "community_badges";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            reference_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reference_id";
+                tableName: "community_badges";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    reputationHistory: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "reputation_history";
+        schema: undefined;
+        columns: {
+            id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "id";
+                tableName: "reputation_history";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            user_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "user_id";
+                tableName: "reputation_history";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            action_type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "action_type";
+                tableName: "reputation_history";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            score_change: import("drizzle-orm/pg-core").PgColumn<{
+                name: "score_change";
+                tableName: "reputation_history";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            reason: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reason";
+                tableName: "reputation_history";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            reference_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reference_id";
+                tableName: "reputation_history";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            previous_score: import("drizzle-orm/pg-core").PgColumn<{
+                name: "previous_score";
+                tableName: "reputation_history";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            new_score: import("drizzle-orm/pg-core").PgColumn<{
+                name: "new_score";
+                tableName: "reputation_history";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "created_at";
+                tableName: "reputation_history";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    notifications: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "notifications";
+        schema: undefined;
+        columns: {
+            id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "id";
+                tableName: "notifications";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            user_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "user_id";
+                tableName: "notifications";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "type";
+                tableName: "notifications";
+                dataType: "string";
+                columnType: "PgEnumColumn";
+                data: "evaluation_received" | "player_discovered" | "report_filed" | "verification_approved" | "badge_earned" | "dispute_resolved" | "community_update" | "player_added" | "evaluation_approved" | "report_resolved" | "new_follower" | "mention" | "system_announcement" | "deadline_reminder" | "achievement_unlocked";
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: ["evaluation_received", "player_discovered", "report_filed", "verification_approved", "badge_earned", "dispute_resolved", "community_update", "player_added", "evaluation_approved", "report_resolved", "new_follower", "mention", "system_announcement", "deadline_reminder", "achievement_unlocked"];
+                baseColumn: never;
+            }, {}, {}>;
+            title_ar: import("drizzle-orm/pg-core").PgColumn<{
+                name: "title_ar";
+                tableName: "notifications";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            message_ar: import("drizzle-orm/pg-core").PgColumn<{
+                name: "message_ar";
+                tableName: "notifications";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            data: import("drizzle-orm/pg-core").PgColumn<{
+                name: "data";
+                tableName: "notifications";
+                dataType: "json";
+                columnType: "PgJson";
+                data: unknown;
+                driverParam: unknown;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            read: import("drizzle-orm/pg-core").PgColumn<{
+                name: "read";
+                tableName: "notifications";
+                dataType: "boolean";
+                columnType: "PgBoolean";
+                data: boolean;
+                driverParam: boolean;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            priority: import("drizzle-orm/pg-core").PgColumn<{
+                name: "priority";
+                tableName: "notifications";
+                dataType: "string";
+                columnType: "PgEnumColumn";
+                data: "medium" | "low" | "high" | "urgent";
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: ["low", "medium", "high", "urgent"];
+                baseColumn: never;
+            }, {}, {}>;
+            reference_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reference_id";
+                tableName: "notifications";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            reference_type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reference_type";
+                tableName: "notifications";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            action_url: import("drizzle-orm/pg-core").PgColumn<{
+                name: "action_url";
+                tableName: "notifications";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            dismissible: import("drizzle-orm/pg-core").PgColumn<{
+                name: "dismissible";
+                tableName: "notifications";
+                dataType: "boolean";
+                columnType: "PgBoolean";
+                data: boolean;
+                driverParam: boolean;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            expires_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "expires_at";
+                tableName: "notifications";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "created_at";
+                tableName: "notifications";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            read_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "read_at";
+                tableName: "notifications";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    notificationPreferences: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "notification_preferences";
+        schema: undefined;
+        columns: {
+            user_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "user_id";
+                tableName: "notification_preferences";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            email_enabled: import("drizzle-orm/pg-core").PgColumn<{
+                name: "email_enabled";
+                tableName: "notification_preferences";
+                dataType: "boolean";
+                columnType: "PgBoolean";
+                data: boolean;
+                driverParam: boolean;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            push_enabled: import("drizzle-orm/pg-core").PgColumn<{
+                name: "push_enabled";
+                tableName: "notification_preferences";
+                dataType: "boolean";
+                columnType: "PgBoolean";
+                data: boolean;
+                driverParam: boolean;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            sms_enabled: import("drizzle-orm/pg-core").PgColumn<{
+                name: "sms_enabled";
+                tableName: "notification_preferences";
+                dataType: "boolean";
+                columnType: "PgBoolean";
+                data: boolean;
+                driverParam: boolean;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            in_app_enabled: import("drizzle-orm/pg-core").PgColumn<{
+                name: "in_app_enabled";
+                tableName: "notification_preferences";
+                dataType: "boolean";
+                columnType: "PgBoolean";
+                data: boolean;
+                driverParam: boolean;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            preferred_language: import("drizzle-orm/pg-core").PgColumn<{
+                name: "preferred_language";
+                tableName: "notification_preferences";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            quiet_hours_start: import("drizzle-orm/pg-core").PgColumn<{
+                name: "quiet_hours_start";
+                tableName: "notification_preferences";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            quiet_hours_end: import("drizzle-orm/pg-core").PgColumn<{
+                name: "quiet_hours_end";
+                tableName: "notification_preferences";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            quiet_hours_min_priority: import("drizzle-orm/pg-core").PgColumn<{
+                name: "quiet_hours_min_priority";
+                tableName: "notification_preferences";
+                dataType: "string";
+                columnType: "PgEnumColumn";
+                data: "medium" | "low" | "high" | "urgent";
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: ["low", "medium", "high", "urgent"];
+                baseColumn: never;
+            }, {}, {}>;
+            type_preferences: import("drizzle-orm/pg-core").PgColumn<{
+                name: "type_preferences";
+                tableName: "notification_preferences";
+                dataType: "json";
+                columnType: "PgJson";
+                data: unknown;
+                driverParam: unknown;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "updated_at";
+                tableName: "notification_preferences";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    notificationDeliveryLogs: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "notification_delivery_logs";
+        schema: undefined;
+        columns: {
+            id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "id";
+                tableName: "notification_delivery_logs";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            notification_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "notification_id";
+                tableName: "notification_delivery_logs";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            channel: import("drizzle-orm/pg-core").PgColumn<{
+                name: "channel";
+                tableName: "notification_delivery_logs";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            status: import("drizzle-orm/pg-core").PgColumn<{
+                name: "status";
+                tableName: "notification_delivery_logs";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            recipient: import("drizzle-orm/pg-core").PgColumn<{
+                name: "recipient";
+                tableName: "notification_delivery_logs";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            error_message: import("drizzle-orm/pg-core").PgColumn<{
+                name: "error_message";
+                tableName: "notification_delivery_logs";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            retry_count: import("drizzle-orm/pg-core").PgColumn<{
+                name: "retry_count";
+                tableName: "notification_delivery_logs";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            attempted_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "attempted_at";
+                tableName: "notification_delivery_logs";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            delivered_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "delivered_at";
+                tableName: "notification_delivery_logs";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            service_response: import("drizzle-orm/pg-core").PgColumn<{
+                name: "service_response";
+                tableName: "notification_delivery_logs";
+                dataType: "json";
+                columnType: "PgJson";
+                data: unknown;
+                driverParam: unknown;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    communityContributions: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "community_contributions";
+        schema: undefined;
+        columns: {
+            id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "id";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            contributor_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "contributor_id";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            contribution_type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "contribution_type";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgEnumColumn";
+                data: "feature" | "bug_fix" | "documentation" | "translation" | "testing" | "design" | "community" | "research" | "feedback" | "moderation";
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: ["feature", "bug_fix", "documentation", "translation", "testing", "design", "community", "research", "feedback", "moderation"];
+                baseColumn: never;
+            }, {}, {}>;
+            title_ar: import("drizzle-orm/pg-core").PgColumn<{
+                name: "title_ar";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            description_ar: import("drizzle-orm/pg-core").PgColumn<{
+                name: "description_ar";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            external_url: import("drizzle-orm/pg-core").PgColumn<{
+                name: "external_url";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            reference_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reference_id";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            reference_type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reference_type";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            status: import("drizzle-orm/pg-core").PgColumn<{
+                name: "status";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            reviewer_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reviewer_id";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            review_comments: import("drizzle-orm/pg-core").PgColumn<{
+                name: "review_comments";
+                tableName: "community_contributions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            impact_score: import("drizzle-orm/pg-core").PgColumn<{
+                name: "impact_score";
+                tableName: "community_contributions";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            community_votes: import("drizzle-orm/pg-core").PgColumn<{
+                name: "community_votes";
+                tableName: "community_contributions";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            tags: import("drizzle-orm/pg-core").PgColumn<{
+                name: "tags";
+                tableName: "community_contributions";
+                dataType: "array";
+                columnType: "PgArray";
+                data: string[];
+                driverParam: string | string[];
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: import("drizzle-orm").Column<{
+                    name: "tags";
+                    tableName: "community_contributions";
+                    dataType: "string";
+                    columnType: "PgText";
+                    data: string;
+                    driverParam: string;
+                    notNull: false;
+                    hasDefault: false;
+                    enumValues: [string, ...string[]];
+                    baseColumn: never;
+                }, object, object>;
+            }, {}, {}>;
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "created_at";
+                tableName: "community_contributions";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "updated_at";
+                tableName: "community_contributions";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            completed_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "completed_at";
+                tableName: "community_contributions";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    verificationRequests: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "verification_requests";
+        schema: undefined;
+        columns: {
+            id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "id";
+                tableName: "verification_requests";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            user_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "user_id";
+                tableName: "verification_requests";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            verification_type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "verification_type";
+                tableName: "verification_requests";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            status: import("drizzle-orm/pg-core").PgColumn<{
+                name: "status";
+                tableName: "verification_requests";
+                dataType: "string";
+                columnType: "PgEnumColumn";
+                data: "pending" | "under_review" | "approved" | "rejected" | "requires_info";
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: ["pending", "under_review", "approved", "rejected", "requires_info"];
+                baseColumn: never;
+            }, {}, {}>;
+            documents: import("drizzle-orm/pg-core").PgColumn<{
+                name: "documents";
+                tableName: "verification_requests";
+                dataType: "json";
+                columnType: "PgJson";
+                data: unknown;
+                driverParam: unknown;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            additional_info: import("drizzle-orm/pg-core").PgColumn<{
+                name: "additional_info";
+                tableName: "verification_requests";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            reviewer_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reviewer_id";
+                tableName: "verification_requests";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            review_notes: import("drizzle-orm/pg-core").PgColumn<{
+                name: "review_notes";
+                tableName: "verification_requests";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            rejection_reason: import("drizzle-orm/pg-core").PgColumn<{
+                name: "rejection_reason";
+                tableName: "verification_requests";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            verification_level: import("drizzle-orm/pg-core").PgColumn<{
+                name: "verification_level";
+                tableName: "verification_requests";
+                dataType: "number";
+                columnType: "PgInteger";
+                data: number;
+                driverParam: string | number;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            expires_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "expires_at";
+                tableName: "verification_requests";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "created_at";
+                tableName: "verification_requests";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "updated_at";
+                tableName: "verification_requests";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            completed_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "completed_at";
+                tableName: "verification_requests";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    disputeResolutions: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "dispute_resolutions";
+        schema: undefined;
+        columns: {
+            id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "id";
+                tableName: "dispute_resolutions";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            related_entity_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "related_entity_id";
+                tableName: "dispute_resolutions";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            entity_type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "entity_type";
+                tableName: "dispute_resolutions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            parties: import("drizzle-orm/pg-core").PgColumn<{
+                name: "parties";
+                tableName: "dispute_resolutions";
+                dataType: "json";
+                columnType: "PgJson";
+                data: unknown;
+                driverParam: unknown;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            status: import("drizzle-orm/pg-core").PgColumn<{
+                name: "status";
+                tableName: "dispute_resolutions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            mediator_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "mediator_id";
+                tableName: "dispute_resolutions";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            description: import("drizzle-orm/pg-core").PgColumn<{
+                name: "description";
+                tableName: "dispute_resolutions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            evidence: import("drizzle-orm/pg-core").PgColumn<{
+                name: "evidence";
+                tableName: "dispute_resolutions";
+                dataType: "json";
+                columnType: "PgJson";
+                data: unknown;
+                driverParam: unknown;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            resolution: import("drizzle-orm/pg-core").PgColumn<{
+                name: "resolution";
+                tableName: "dispute_resolutions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            actions_taken: import("drizzle-orm/pg-core").PgColumn<{
+                name: "actions_taken";
+                tableName: "dispute_resolutions";
+                dataType: "json";
+                columnType: "PgJson";
+                data: unknown;
+                driverParam: unknown;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            compensation: import("drizzle-orm/pg-core").PgColumn<{
+                name: "compensation";
+                tableName: "dispute_resolutions";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "created_at";
+                tableName: "dispute_resolutions";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            updated_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "updated_at";
+                tableName: "dispute_resolutions";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            resolved_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "resolved_at";
+                tableName: "dispute_resolutions";
+                dataType: "date";
+                columnType: "PgTimestamp";
+                data: Date;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+        };
+        dialect: "pg";
+    }>;
+    communityActivities: import("drizzle-orm/pg-core").PgTableWithColumns<{
+        name: "community_activities";
+        schema: undefined;
+        columns: {
+            id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "id";
+                tableName: "community_activities";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            user_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "user_id";
+                tableName: "community_activities";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            activity_type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "activity_type";
+                tableName: "community_activities";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            description_ar: import("drizzle-orm/pg-core").PgColumn<{
+                name: "description_ar";
+                tableName: "community_activities";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: true;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            reference_id: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reference_id";
+                tableName: "community_activities";
+                dataType: "string";
+                columnType: "PgUUID";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            reference_type: import("drizzle-orm/pg-core").PgColumn<{
+                name: "reference_type";
+                tableName: "community_activities";
+                dataType: "string";
+                columnType: "PgText";
+                data: string;
+                driverParam: string;
+                notNull: false;
+                hasDefault: false;
+                enumValues: [string, ...string[]];
+                baseColumn: never;
+            }, {}, {}>;
+            metadata: import("drizzle-orm/pg-core").PgColumn<{
+                name: "metadata";
+                tableName: "community_activities";
+                dataType: "json";
+                columnType: "PgJson";
+                data: unknown;
+                driverParam: unknown;
+                notNull: false;
+                hasDefault: false;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            is_public: import("drizzle-orm/pg-core").PgColumn<{
+                name: "is_public";
+                tableName: "community_activities";
+                dataType: "boolean";
+                columnType: "PgBoolean";
+                data: boolean;
+                driverParam: boolean;
+                notNull: false;
+                hasDefault: true;
+                enumValues: undefined;
+                baseColumn: never;
+            }, {}, {}>;
+            created_at: import("drizzle-orm/pg-core").PgColumn<{
+                name: "created_at";
+                tableName: "community_activities";
                 dataType: "date";
                 columnType: "PgTimestamp";
                 data: Date;

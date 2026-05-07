@@ -1,5 +1,5 @@
 import { relations } from 'drizzle-orm';
-import { users, academies, players, evaluations, coachNotes, playerVideos, playerStats } from './schema/index.js';
+import { users, academies, players, evaluations, coachNotes, playerVideos, playerStats } from './schema';
 /**
  * Define relationships between tables in the El-Harifa database
  * These relationships enable powerful queries with joins and related data access

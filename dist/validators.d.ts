@@ -198,12 +198,12 @@ export declare const insertPlayerSchema: z.ZodObject<{
     created_by: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     governorate: "القاهرة" | "الإسكندرية" | "الجيزة" | "الشرقية" | "الدقهلية" | "البحيرة" | "المنوفية" | "الغربية" | "كفر الشيخ" | "الأقصر" | "أسوان" | "قنا" | "سوهاج" | "أسيوط" | "المنيا" | "الفيوم" | "بني سويف" | "القليوبية" | "الإسماعيلية" | "السويس" | "بورسعيد" | "دمياط" | "شمال سيناء" | "جنوب سيناء" | "مطروح" | "البحر الأحمر" | "الوادي الجديد";
+    created_by: string;
     status: "incomplete" | "active" | "archived";
     full_name_ar: string;
     birth_date: Date;
     dominant_foot: "right" | "left" | "both";
     primary_position: "GK" | "CB" | "LB" | "RB" | "CM" | "AM" | "LW" | "RW" | "ST";
-    created_by: string;
     academy_id?: string | undefined;
     bio?: string | undefined;
     latitude?: number | undefined;
@@ -218,11 +218,11 @@ export declare const insertPlayerSchema: z.ZodObject<{
     scout_story?: string | undefined;
 }, {
     governorate: "القاهرة" | "الإسكندرية" | "الجيزة" | "الشرقية" | "الدقهلية" | "البحيرة" | "المنوفية" | "الغربية" | "كفر الشيخ" | "الأقصر" | "أسوان" | "قنا" | "سوهاج" | "أسيوط" | "المنيا" | "الفيوم" | "بني سويف" | "القليوبية" | "الإسماعيلية" | "السويس" | "بورسعيد" | "دمياط" | "شمال سيناء" | "جنوب سيناء" | "مطروح" | "البحر الأحمر" | "الوادي الجديد";
+    created_by: string;
     full_name_ar: string;
     birth_date: Date;
     dominant_foot: "right" | "left" | "both";
     primary_position: "GK" | "CB" | "LB" | "RB" | "CM" | "AM" | "LW" | "RW" | "ST";
-    created_by: string;
     academy_id?: string | undefined;
     bio?: string | undefined;
     latitude?: number | undefined;
@@ -263,6 +263,7 @@ export declare const updatePlayerSchema: z.ZodObject<{
     bio?: string | undefined;
     latitude?: number | undefined;
     longitude?: number | undefined;
+    created_by?: string | undefined;
     status?: "incomplete" | "active" | "archived" | undefined;
     full_name_ar?: string | undefined;
     birth_date?: Date | undefined;
@@ -276,13 +277,13 @@ export declare const updatePlayerSchema: z.ZodObject<{
     daily_travel_to_training?: string | undefined;
     school_performance?: string | undefined;
     scout_story?: string | undefined;
-    created_by?: string | undefined;
 }, {
     governorate?: "القاهرة" | "الإسكندرية" | "الجيزة" | "الشرقية" | "الدقهلية" | "البحيرة" | "المنوفية" | "الغربية" | "كفر الشيخ" | "الأقصر" | "أسوان" | "قنا" | "سوهاج" | "أسيوط" | "المنيا" | "الفيوم" | "بني سويف" | "القليوبية" | "الإسماعيلية" | "السويس" | "بورسعيد" | "دمياط" | "شمال سيناء" | "جنوب سيناء" | "مطروح" | "البحر الأحمر" | "الوادي الجديد" | undefined;
     academy_id?: string | undefined;
     bio?: string | undefined;
     latitude?: number | undefined;
     longitude?: number | undefined;
+    created_by?: string | undefined;
     status?: "incomplete" | "active" | "archived" | undefined;
     full_name_ar?: string | undefined;
     birth_date?: Date | undefined;
@@ -296,7 +297,6 @@ export declare const updatePlayerSchema: z.ZodObject<{
     daily_travel_to_training?: string | undefined;
     school_performance?: string | undefined;
     scout_story?: string | undefined;
-    created_by?: string | undefined;
 }>;
 export declare const technicalSkillsSchema: z.ZodObject<{
     dribbling: z.ZodNumber;

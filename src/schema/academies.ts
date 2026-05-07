@@ -6,6 +6,7 @@ import {
   decimal, 
   timestamp,
   boolean,
+  integer,
   index
 } from 'drizzle-orm/pg-core';
 
@@ -20,14 +21,32 @@ export const academies = pgTable('academies', {
   /** Academy name in Arabic */
   name_ar: varchar('name_ar', { length: 100 }).notNull(),
   
+  /** Academy name in English */
+  name_en: varchar('name_en', { length: 100 }),
+  
   /** Egyptian governorate where academy is located */
   governorate: varchar('governorate', { length: 50 }).notNull().$type<'القاهرة' | 'الإسكندرية' | 'الجيزة' | 'الشرقية' | 'الدقهلية' | 'البحيرة' | 'المنوفية' | 'الغربية' | 'كفر الشيخ' | 'الأقصر' | 'أسوان' | 'قنا' | 'سوهاج' | 'أسيوط' | 'المنيا' | 'الفيوم' | 'بني سويف' | 'القليوبية' | 'الإسماعيلية' | 'السويس' | 'بورسعيد' | 'دمياط' | 'شمال سيناء' | 'جنوب سيناء' | 'مطروح' | 'البحر الأحمر' | 'الأقصر' | 'الوادي الجديد'>(),
+  
+  /** City within the governorate */
+  city: varchar('city', { length: 50 }),
   
   /** Type of institution */
   type: varchar('type', { length: 20 }).notNull().$type<'مركز_شباب' | 'اكاديمية' | 'نادي' | 'مدرسة'>(),
   
   /** Physical address of the academy */
   address: text('address'),
+  
+  /** Phone number */
+  phone: varchar('phone', { length: 20 }),
+  
+  /** Email address */
+  email: varchar('email', { length: 100 }),
+  
+  /** Website URL */
+  website: varchar('website', { length: 200 }),
+  
+  /** Year the academy was established */
+  established_year: integer('established_year'),
   
   /** Geographic latitude for location mapping */
   latitude: decimal('latitude', { precision: 10, scale: 7 }),
@@ -42,7 +61,13 @@ export const academies = pgTable('academies', {
   coach_phone: varchar('coach_phone', { length: 20 }),
   
   /** User ID of the academy manager (foreign key to users) */
-  manager_id: uuid('manager_id').notNull(),
+  manager_id: uuid('manager_id'),
+  
+  /** User ID who created this academy */
+  created_by: uuid('created_by'),
+  
+  /** Whether academy is active in the system */
+  is_active: boolean('is_active').default(true),
   
   /** Academy status in the system */
   status: varchar('status', { length: 20 }).default('قيد_المراجعة').$type<'قيد_المراجعة' | 'نشط' | 'موقوف' | 'مرفوض'>(),

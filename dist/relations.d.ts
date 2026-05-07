@@ -13,7 +13,7 @@ export declare const usersRelations: import("drizzle-orm").Relations<"users", {
     academy: import("drizzle-orm").One<"academies", false>;
 }>;
 export declare const academiesRelations: import("drizzle-orm").Relations<"academies", {
-    manager: import("drizzle-orm").One<"users", true>;
+    manager: import("drizzle-orm").One<"users", false>;
     reviewer: import("drizzle-orm").One<"users", false>;
     players: import("drizzle-orm").Many<"players">;
     staff: import("drizzle-orm").Many<"users">;
