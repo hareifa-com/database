@@ -1,0 +1,21 @@
+{
+  "name": "football-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean",
+    "db:generate": "cd packages/database && pnpm db:generate",
+    "db:migrate": "cd packages/database && pnpm db:migrate",
+    "db:seed": "cd packages/database && pnpm db:seed"
+  },
+  "devDependencies": {
+    "turbo": "^1.12.4",
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@8.15.4"
+}

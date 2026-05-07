@@ -1,0 +1,31 @@
+export const GOVERNORATES = [
+  { id: 1, name: 'القاهرة', nameEn: 'Cairo' },
+  { id: 2, name: 'الإسكندرية', nameEn: 'Alexandria' },
+  { id: 3, name: 'الجيزة', nameEn: 'Giza' },
+  { id: 4, name: 'القليوبية', nameEn: 'Qalyubia' },
+  { id: 5, name: 'الدقهلية', nameEn: 'Dakahlia' },
+  { id: 6, name: 'الشرقية', nameEn: 'Sharqia' },
+  { id: 7, name: 'المنوفية', nameEn: 'Monufia' },
+  { id: 8, name: 'الغربية', nameEn: 'Gharbia' },
+  { id: 9, name: 'كفر الشيخ', nameEn: 'Kafr El Sheikh' },
+  { id: 10, name: 'البحيرة', nameEn: 'Beheira' },
+  { id: 11, name: 'الإسماعيلية', nameEn: 'Ismailia' },
+  { id: 12, name: 'السويس', nameEn: 'Suez' },
+  { id: 13, name: 'بورسعيد', nameEn: 'Port Said' },
+  { id: 14, name: 'دمياط', nameEn: 'Damietta' },
+  { id: 15, name: 'شمال سيناء', nameEn: 'North Sinai' },
+  { id: 16, name: 'جنوب سيناء', nameEn: 'South Sinai' },
+  { id: 17, name: 'الأقصر', nameEn: 'Luxor' },
+  { id: 18, name: 'قنا', nameEn: 'Qena' },
+  { id: 19, name: 'أسوان', nameEn: 'Aswan' },
+  { id: 20, name: 'البحر الأحمر', nameEn: 'Red Sea' },
+  { id: 21, name: 'الوادي الجديد', nameEn: 'New Valley' },
+  { id: 22, name: 'مطروح', nameEn: 'Matrouh' },
+  { id: 23, name: 'الفيوم', nameEn: 'Faiyum' },
+  { id: 24, name: 'بني سويف', nameEn: 'Beni Suef' },
+  { id: 25, name: 'المنيا', nameEn: 'Minya' },
+  { id: 26, name: 'أسيوط', nameEn: 'Asyut' },
+  { id: 27, name: 'سوهاج', nameEn: 'Sohag' }
+] as const
+
+export type Governorate = typeof GOVERNORATES[number]
