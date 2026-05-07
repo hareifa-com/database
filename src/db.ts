@@ -1,6 +1,6 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
-import * as schema from './schema';
+import { schema } from './schema';
 
 /**
  * PostgreSQL connection pool for El-Harifa database

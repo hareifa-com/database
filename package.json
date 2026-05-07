@@ -1,14 +1,15 @@
 {
   "name": "@hareifa/database",
   "version": "0.1.0",
+  "type": "module",
   "description": "Database schema and utilities for El-Harifa - Egyptian youth football player discovery and evaluation system",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "generate": "drizzle-kit generate",
-    "push": "drizzle-kit push",
+    "generate": "drizzle-kit generate:pg",
+    "push": "drizzle-kit push:pg",
     "studio": "drizzle-kit studio",
     "seed": "tsx src/seed.ts",
     "typecheck": "tsc --noEmit"
@@ -25,16 +26,19 @@
   "author": "El-Harifa Team",
   "license": "MIT",
   "dependencies": {
-    "drizzle-orm": "^0.33.0",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "^0.29.5",
     "pg": "^8.13.0",
-    "zod": "^3.23.8",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^22.9.0",
     "@types/pg": "^8.11.10",
     "@types/uuid": "^10.0.0",
-    "drizzle-kit": "^0.25.0",
+    "drizzle-kit": "^0.20.14",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   },
