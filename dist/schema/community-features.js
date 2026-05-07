@@ -167,4 +167,3 @@ export const communityActivities = pgTable('community_activities', {
     publicIdx: index('activities_public_idx').on(table.is_public),
     createdAtIdx: index('activities_created_at_idx').on(table.created_at),
 }));
-//# sourceMappingURL=community-features.js.map

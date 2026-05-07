@@ -119,4 +119,3 @@ export const playerStatsRelations = relations(playerStats, ({ one }) => ({
         references: [players.id],
     }),
 }));
-//# sourceMappingURL=relations.js.map

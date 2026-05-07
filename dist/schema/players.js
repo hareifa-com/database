@@ -1,4 +1,4 @@
-import { pgTable, uuid, varchar, text, date, decimal, timestamp, boolean, index } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, varchar, text, date, decimal, timestamp, index } from 'drizzle-orm/pg-core';
 /**
  * Players table - the heart of the El-Harifa system
  * Stores information about young football players being discovered and evaluated
@@ -59,4 +59,3 @@ export const players = pgTable('players', {
     createdByIdx: index('players_created_by_idx').on(table.created_by),
     dominantFootIdx: index('players_dominant_foot_idx').on(table.dominant_foot),
 }));
-//# sourceMappingURL=players.js.map

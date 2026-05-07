@@ -123,4 +123,3 @@ export const notificationDeliveryLogs = pgTable('notification_delivery_logs', {
     channelIdx: index('notif_delivery_channel_idx').on(table.channel),
     attemptedAtIdx: index('notif_delivery_attempted_at_idx').on(table.attempted_at),
 }));
-//# sourceMappingURL=notifications.js.map

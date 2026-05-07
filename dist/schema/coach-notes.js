@@ -27,4 +27,3 @@ export const coachNotes = pgTable('coach_notes', {
     noteDateIdx: index('coach_notes_note_date_idx').on(table.note_date),
     attendanceIdx: index('coach_notes_attendance_idx').on(table.attendance),
 }));
-//# sourceMappingURL=coach-notes.js.map

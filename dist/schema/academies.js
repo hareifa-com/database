@@ -64,4 +64,3 @@ export const academies = pgTable('academies', {
     reviewerIdx: index('academies_reviewer_idx').on(table.reviewer_id),
     verifiedIdx: index('academies_verified_idx').on(table.verified),
 }));
-//# sourceMappingURL=academies.js.map

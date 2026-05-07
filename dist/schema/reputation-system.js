@@ -109,4 +109,3 @@ export const reputationHistory = pgTable('reputation_history', {
     actionTypeIdx: index('reputation_action_type_idx').on(table.action_type),
     createdAtIdx: index('reputation_history_created_at_idx').on(table.created_at),
 }));
-//# sourceMappingURL=reputation-system.js.map

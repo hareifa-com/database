@@ -42,4 +42,3 @@ export const users = pgTable('users', {
     governorateIdx: index('users_governorate_idx').on(table.governorate),
     academyIdx: index('users_academy_idx').on(table.academy_id),
 }));
-//# sourceMappingURL=users.js.map

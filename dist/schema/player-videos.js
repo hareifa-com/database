@@ -31,4 +31,3 @@ export const playerVideos = pgTable('player_videos', {
     uploadedByIdx: index('player_videos_uploaded_by_idx').on(table.uploaded_by),
     createdAtIdx: index('player_videos_created_at_idx').on(table.created_at),
 }));
-//# sourceMappingURL=player-videos.js.map

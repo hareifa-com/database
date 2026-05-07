@@ -21,4 +21,3 @@ export const db = drizzle(pool, {
  * Export the pool for direct access if needed
  */
 export { pool };
-//# sourceMappingURL=db.js.map

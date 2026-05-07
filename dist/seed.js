@@ -1,5 +1,5 @@
 import { db } from './db';
-import { users, academies, players, evaluations, coachNotes, playerVideos, playerStats } from './schema';
+import { users, academies, players, evaluations, coachNotes, playerStats } from './schema';
 import { eq } from 'drizzle-orm';
 import bcrypt from 'bcrypt';
 /**
@@ -230,4 +230,3 @@ if (process.argv[1] === __filename) {
         process.exit(1);
     });
 }
-//# sourceMappingURL=seed.js.map

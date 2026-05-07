@@ -58,4 +58,3 @@ export const evaluations = pgTable('evaluations', {
     weightIdx: index('evaluations_weight_idx').on(table.weight),
     reviewedByIdx: index('evaluations_reviewed_by_idx').on(table.reviewed_by),
 }));
-//# sourceMappingURL=evaluations.js.map

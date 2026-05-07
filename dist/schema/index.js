@@ -44,4 +44,3 @@ export const schema = {
     disputeResolutions,
     communityActivities,
 };
-//# sourceMappingURL=index.js.map

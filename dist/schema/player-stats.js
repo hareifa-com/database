@@ -29,4 +29,3 @@ export const playerStats = pgTable('player_stats', {
     lastEvaluationDateIdx: index('player_stats_last_evaluation_date_idx').on(table.last_evaluation_date),
     updatedAtIdx: index('player_stats_updated_at_idx').on(table.updated_at),
 }));
-//# sourceMappingURL=player-stats.js.map

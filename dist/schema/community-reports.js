@@ -1,4 +1,4 @@
-import { pgTable, uuid, text, timestamp, boolean, index, pgEnum } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, timestamp, index, pgEnum } from 'drizzle-orm/pg-core';
 /**
  * Community Reports Table - نظام الإبلاغ المجتمعي
  * يسمح للمستخدمين بالإبلاغ عن محتوى مشبوه أو غير مناسب
@@ -59,4 +59,3 @@ export const communityReports = pgTable('community_reports', {
     priorityIdx: index('reports_priority_idx').on(table.priority),
     createdAtIdx: index('reports_created_at_idx').on(table.created_at),
 }));
-//# sourceMappingURL=community-reports.js.map
