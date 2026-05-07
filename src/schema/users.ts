@@ -29,7 +29,7 @@ export const users = pgTable('users', {
   password_hash: text('password_hash').notNull(),
   
   /** User role in the system */
-  role: varchar('role', { length: 20 }).notNull().$type<'admin' | 'regional_admin' | 'academy_manager' | 'coach' | 'verified_scout' | 'volunteer'>(),
+  role: varchar('role', { length: 20 }).notNull().$type<'admin' | 'regional_admin' | 'academy_manager' | 'coach' | 'verified_scout' | 'community_member' | 'volunteer'>(),
   
   /** Egyptian governorate where user is located */
   governorate: varchar('governorate', { length: 50 }),
@@ -54,6 +54,9 @@ export const users = pgTable('users', {
   
   /** Last update timestamp */
   updated_at: timestamp('updated_at').defaultNow(),
+  
+  /** Last login timestamp */
+  last_login_at: timestamp('last_login_at'),
 }, (table) => ({
   // Indexes for performance
   emailIdx: index('users_email_idx').on(table.email),

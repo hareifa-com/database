@@ -71,7 +71,7 @@ export declare const users: import("drizzle-orm/pg-core").PgTableWithColumns<{
             tableName: "users";
             dataType: "string";
             columnType: "PgVarchar";
-            data: "admin" | "regional_admin" | "academy_manager" | "coach" | "verified_scout" | "volunteer";
+            data: "admin" | "regional_admin" | "academy_manager" | "coach" | "verified_scout" | "community_member" | "volunteer";
             driverParam: string;
             notNull: true;
             hasDefault: false;
@@ -171,6 +171,18 @@ export declare const users: import("drizzle-orm/pg-core").PgTableWithColumns<{
             driverParam: string;
             notNull: false;
             hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        last_login_at: import("drizzle-orm/pg-core").PgColumn<{
+            name: "last_login_at";
+            tableName: "users";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
+            notNull: false;
+            hasDefault: false;
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;

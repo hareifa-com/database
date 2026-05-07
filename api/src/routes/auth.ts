@@ -23,14 +23,14 @@ router.post('/register', validateRequest({
   body: z.object({
     email: z.string().email('البريد الإلكتروني غير صالح'),
     password: z.string().min(8, 'كلمة المرور يجب أن تكون 8 أحرف على الأقل'),
-    full_name_ar: z.string().min(2, 'الاسم الكامل مطلوب'),
+    full_name: z.string().min(2, 'الاسم الكامل مطلوب'),
     role: z.enum(['admin', 'regional_admin', 'academy_manager', 'coach', 'verified_scout', 'community_member', 'volunteer']).default('community_member'),
     phone: z.string().optional(),
     governorate: z.string().optional(),
   }),
 }), async (req, res, next) => {
   try {
-    const { email, password, full_name_ar, role, phone, governorate } = req.body;
+    const { email, password, full_name, role, phone, governorate } = req.body;
     
     // Check if user already exists
     const existingUser = await db
@@ -53,12 +53,12 @@ router.post('/register', validateRequest({
     const newUser = await db.insert(users).values({
       email,
       password_hash: hashedPassword,
-      full_name_ar,
+      full_name,
       role,
       phone,
       governorate,
       is_active: true,
-      email_verified: false,
+      verified: false,
       created_at: new Date(),
       updated_at: new Date(),
     }).returning();
@@ -69,7 +69,7 @@ router.post('/register', validateRequest({
     // Generate JWT token
     const token = generateToken({
       id: userWithoutPassword.id,
-      email: userWithoutPassword.email,
+      email: userWithoutPassword.email || '',
       role: userWithoutPassword.role,
       permissions: getPermissionsForRole(userWithoutPassword.role),
     });
@@ -129,7 +129,7 @@ router.post('/login', validateRequest({
     // Generate JWT token
     const token = generateToken({
       id: userWithoutPassword.id,
-      email: userWithoutPassword.email,
+      email: userWithoutPassword.email || '',
       role: userWithoutPassword.role,
       permissions: getPermissionsForRole(userWithoutPassword.role),
     });
@@ -196,7 +196,7 @@ router.post('/refresh', validateRequest({
     // Generate new token
     const newToken = generateToken({
       id: user[0].id,
-      email: user[0].email,
+      email: user[0].email || '',
       role: user[0].role,
       permissions: getPermissionsForRole(user[0].role),
     });

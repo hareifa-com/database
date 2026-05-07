@@ -32,6 +32,8 @@ export const users = pgTable('users', {
     created_at: timestamp('created_at').defaultNow(),
     /** Last update timestamp */
     updated_at: timestamp('updated_at').defaultNow(),
+    /** Last login timestamp */
+    last_login_at: timestamp('last_login_at'),
 }, (table) => ({
     // Indexes for performance
     emailIdx: index('users_email_idx').on(table.email),
