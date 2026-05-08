@@ -1,0 +1,268 @@
+---
+title: "نظرة عامة على الـ API"
+description: "وثائق واجهة برمجة التطبيقات لمنصة اللاعبين الشباب"
+---
+
+# نظرة عامة على الـ API
+
+واجهة برمجة التطبيقات (API) لمنصة اللاعبين الشباب توفر مجموعة شاملة من نقاط النهاية لإدارة اللاعبين والتقييمات والأكاديميات.
+
+## 🔗 معلومات الأساسية
+
+- **Base URL**: `https://api.football-platform.eg/v1`
+- **البروتوكول**: HTTPS
+- **تنسيق البيانات**: JSON
+- **المصادقة**: Bearer Token
+
+## 🔐 المصادقة
+
+جميع طلبات API تتطلب مصادقة باستخدام Bearer Token:
+
+```http
+Authorization: Bearer <your-token>
+```
+
+### الحصول على Token
+```bash
+curl -X POST https://api.football-platform.eg/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "password"
+  }'
+```
+
+## 📊 الاستجابات القياسية
+
+### نجاح العملية
+```json
+{
+  "success": true,
+  "data": { ... },
+  "message": "تمت العملية بنجاح"
+}
+```
+### خطأ في العملية
+```json
+{
+  "success": false,
+  "error": "رسالة الخطأ",
+  "code": "ERROR_CODE"
+}
+```
+
+### التصفح (Pagination)
+```json
+{
+  "success": true,
+  "data": [ ... ],
+  "pagination": {
+    "page": 1,
+    "limit": 10,
+    "total": 100,
+    "totalPages": 10
+  }
+}
+```
+
+## 👥 نقاط النهاية
+
+### اللاعبون (Players)
+
+#### الحصول على قائمة اللاعبين
+```http
+GET /players
+```
+
+**المعلمات الاختيارية**:
+- `page` (number): رقم الصفحة
+- `limit` (number): عدد النتائج في الصفحة
+- `position` (string): فلترة حسب المركز
+- `governorate` (string): فلترة حسب المحافظة
+- `search` (string): بحث في الاسم
+
+**مثال**:
+```bash
+curl -X GET "https://api.football-platform.eg/v1/players?page=1&limit=10&position=مهاجم" \
+  -H "Authorization: Bearer <token>"
+```
+
+#### الحصول على لاعب محدد
+```http
+GET /players/{id}
+```
+
+#### إنشاء لاعب جديد
+```http
+POST /players
+```
+
+**البيانات المطلوبة**:
+```json
+{
+  "name": "أحمد محمد",
+  "position": "مهاجم",
+  "age": 17,
+  "governorate": "القاهرة",
+  "email": "player@example.com",
+  "phone": "01234567890"
+}
+```
+
+#### تحديث لاعب
+```http
+PUT /players/{id}
+```
+
+#### حذف لاعب
+```http
+DELETE /players/{id}
+```
+
+### التقييمات (Evaluations)
+
+#### الحصول على قائمة التقييمات
+```http
+GET /evaluations
+```
+
+**المعلمات الاختيارية**:
+- `playerId` (number): فلترة حسب اللاعب
+- `evaluatorId` (number): فلترة حسب المقيم
+- `minScore` (number): الحد الأدنى للتقييم
+- `maxScore` (number): الحد الأقصى للتقييم
+
+#### إنشاء تقييم جديد
+```http
+POST /evaluations
+```
+
+**البيانات المطلوبة**:
+```json
+{
+  "playerId": 1,
+  "technicalSkills": 8.5,
+  "ballControl": 8.0,
+  "passing": 8.2,
+  "shooting": 7.8,
+  "dribbling": 8.1,
+  "heading": 7.5,
+  "physicalAttributes": 8.3,
+  "speed": 8.7,
+  "stamina": 8.0,
+  "strength": 7.9,
+  "agility": 8.4,
+  "mentalAspects": 8.1,
+  "concentration": 8.2,
+  "decisionMaking": 7.9,
+  "confidence": 8.3,
+  "teamwork": 8.0,
+  "tacticalUnderstanding": 7.7,
+  "positioning": 7.8,
+  "gameReading": 7.6,
+  "overallScore": 8.1,
+  "potentialScore": 8.5,
+  "strengths": "سرعة ممتازة ومهارات فنية جيدة",
+  "weaknesses": "يحتاج تحسين في اللعب بالرأس",
+  "recommendations": "التركيز على التدريبات البدنية",
+  "isRecommended": true,
+  "isTalentIdentified": true
+}
+```
+
+### الأكاديميات (Academies)
+
+#### الحصول على قائمة الأكاديميات
+```http
+GET /academies
+```
+
+#### إنشاء أكاديمية جديدة
+```http
+POST /academies
+```
+
+**البيانات المطلوبة**:
+```json
+{
+  "name": "أكاديمية النصر",
+  "description": "أكاديمية متخصصة في تدريب الشباب",
+  "governorate": "القاهرة",
+  "city": "القاهرة",
+  "address": "شارع النصر، القاهرة",
+  "phone": "01234567890",
+  "email": "academy@example.com"
+}
+```
+
+## 🚨 رموز الخطأ
+
+| الرمز | الوصف | الحل |
+|-------|-------|------|
+| `UNAUTHORIZED` | غير مصرح بالوصول | تحقق من التوكن |
+| `FORBIDDEN` | لا تملك الصلاحيات | تواصل مع المسؤول |
+| `NOT_FOUND` | المورد غير موجود | تحقق من المعرف |
+| `VALIDATION_ERROR` | خطأ في البيانات | تحقق من المدخلات |
+| `RATE_LIMIT` | تجاوز الحد المحدد | انتظر ثم حاول مرة أخرى |
+| `SERVER_ERROR` | خطأ في الخادم | تواصل مع الدعم الفني |
+
+## 📝 أمثلة عملية
+
+### مثال 1: إضافة لاعب جديد وتقييمه
+
+```bash
+# 1. إنشاء لاعب جديد
+curl -X POST "https://api.football-platform.eg/v1/players" \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "محمد علي",
+    "position": "مدافع",
+    "age": 16,
+    "governorate": "الإسكندرية"
+  }'
+
+# 2. تقييم اللاعب
+curl -X POST "https://api.football-platform.eg/v1/evaluations" \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "playerId": 1,
+    "technicalSkills": 7.5,
+    "physicalAttributes": 8.0,
+    "mentalAspects": 7.8,
+    "tacticalUnderstanding": 7.2,
+    "overallScore": 7.6
+  }'
+```
+
+### مثال 2: البحث عن لاعبين في محافظة معينة
+
+```bash
+curl -X GET "https://api.football-platform.eg/v1/players?governorate=القاهرة&position=مهاجم&limit=5" \
+  -H "Authorization: Bearer <token>"
+```
+
+### مثال 3: الحصول على تقييمات لاعب محدد
+
+```bash
+curl -X GET "https://api.football-platform.eg/v1/evaluations?playerId=1" \
+  -H "Authorization: Bearer <token>"
+```
+
+## 🔧 أدوات المطورين
+
+### Postman Collection
+يمكنك تحميل مجموعة Postman جاهزة لجميع نقاط النهاية.
+
+### SDKs
+- **TypeScript**: `@platform/api-client`
+- **JavaScript**: قريباً
+- **Python**: قريباً
+
+## 📞 الدعم الفني
+
+لأي استفسارات تقنية أو مشاكل في استخدام الـ API:
+- البريد الإلكتروني: api-support@football-platform.eg
+- التوثيق: [docs.football-platform.eg](https://docs.football-platform.eg)
+- GitHub: [Issues](https://github.com/your-org/football-platform/issues)

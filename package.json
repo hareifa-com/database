@@ -1,58 +1,21 @@
 {
-  "name": "@hareifa/database",
+  "name": "football-platform",
   "version": "0.1.0",
-  "type": "module",
-  "description": "Database schema and utilities for El-Harifa - Egyptian youth football player discovery and evaluation system",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "private": true,
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
-    "vercel-build": "npm install && npx tsc --project tsconfig.api.json",
-    "generate": "drizzle-kit generate:pg",
-    "push": "drizzle-kit push:pg",
-    "studio": "drizzle-kit studio",
-    "seed": "tsx src/seed.ts",
-    "typecheck": "tsc --noEmit"
-  },
-  "keywords": [
-    "football",
-    "egypt",
-    "youth",
-    "scouting",
-    "database",
-    "drizzle",
-    "postgresql"
-  ],
-  "author": "El-Harifa Team",
-  "license": "MIT",
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "dotenv": "^17.4.2",
-    "drizzle-orm": "^0.29.5",
-    "pg": "^8.13.0",
-    "uuid": "^10.0.0",
-    "zod": "^3.23.8"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean",
+    "db:generate": "cd packages/database && pnpm db:generate",
+    "db:migrate": "cd packages/database && pnpm db:migrate",
+    "db:seed": "cd packages/database && pnpm db:seed"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
-    "@types/node": "^22.19.17",
-    "@types/pg": "^8.11.10",
-    "@types/uuid": "^10.0.0",
-    "drizzle-kit": "^0.20.14",
-    "tsx": "^4.19.2",
-    "typescript": "^5.6.3"
+    "turbo": "^1.12.4",
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
   },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    },
-    "./schema": {
-      "types": "./dist/schema/index.d.ts",
-      "import": "./dist/schema/index.js",
-      "require": "./dist/schema/index.js"
-    }
-  }
+  "packageManager": "pnpm@8.15.4"
 }

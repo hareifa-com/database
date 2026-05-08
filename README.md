@@ -1,248 +1,279 @@
-# 🏆 مشروع الحريفة - منصة مفتوحة المصدر لاكتشاف المواهب الرياضية
+# منصة اللاعبين الشباب
 
-## 🌟 نظرة عامة
+منصة متكاملة مصممة لاكتشاف وتقييم وتطوير المواهب الكروية الشابة في مصر. توفر المنصة أدوات متقدمة للمدربين والكشافات والأكاديميات لتتبع وتطوير اللاعبين الشباب بناءً على معيار تقييم موحد.
 
-مشروع الحريفة هو **منصة عالمية مفتوحة المصدر** لاكتشاف وتقييم لاعبي كرة القدم الناشئين، تبدأ من مصر وتتوسع عالمياً. يوفر النظام مجتمعياً متكاملاً للتعاون والتقييم الموثوق.
-
-## 🎯 الأهداف الرئيسية
-
-- 🔍 **اكتشاف المواهب**: منصب مركزي للمواهب الرياضية الشابة
-- 🤝 **نظام مجتمعي**: تقييمات متعددة المصادر ونظام سمعة
-- 🌍 **وصول عالمي**: مجاني ومفتوح للجميع في كل أنحاء العالم
-- 📚 **مصدر تعليمي**: أدوات وموارد لتطوير كرة القدم
-- 🏆 **فرص متساوية**: منصة عادلة للجميع بغض النظر عن الموقع
-
-## 🏗️ هيكل المشروع
+## 🏗️ بنية المشروع
 
 ```
-hareifa/
-├── database/              # قاعدة البيانات والـ Schema (هذا المجلد)
-│   ├── src/
-│   │   ├── schema/      # تعريفات الجداول
-│   │   ├── relations.ts # العلاقات بين الجداول
-│   │   └── seed.ts     # البيانات الأولية
-│   └── drizzle.config.ts
-├── api/                  # REST API (تم إنشاؤه)
-│   ├── src/
-│   │   ├── routes/      # المسارات
-│   │   ├── middleware/  # الوسطاء
-│   │   └── utils/       # الأدوات المساعدة
-│   └── package.json
-├── web/                  # واجهة الويب (قادمة)
-├── mobile/               # تطبيقات الموبايل (قادمة)
-└── docs/                 # التوثيق
-```
-
-## 🗄️ قاعدة البيانات
-
-### الجداول الأساسية
-- **users** - المستخدمين والأدوار
-- **academies** - الأكاديميات والنوادي
-- **players** - اللاعبين ومعلوماتهم
-- **evaluations** - التقييمات الفنية
-- **coach_notes** - ملاحظات المدربين
-- **player_videos** - فيديوهات اللاعبين
-- **player_stats** - الإحصائيات المجمعة
-
-### جداول النظام المجتمعي (جديدة!)
-- **community_reports** - نظام الإبلاغ المجتمعي
-- **reputation_scores** - نقاط السمعة والثقة
-- **community_badges** - شارات المجتمع
-- **notifications** - نظام الإشعارات المتقدم
-- **community_contributions** - مساهمات المجتمع
-- **verification_requests** - طلبات التحقق
-- **dispute_resolutions** - حل النزاعات
-- بيانات أولية للمحافظات المصرية
-- علاقات بين الجداول
-- أدوات للبذور والتهيئة
-
-## التقنيات المستخدمة
-
-- **ORM**: Drizzle ORM (latest version)
-- **قاعدة البيانات**: PostgreSQL
-- **اللغة**: TypeScript (strict mode)
-- **التحقق**: Zod
-- **مدير الحزم**: pnpm
-
-## هيكل المشروع
-
-```
-packages/database/
-├── src/
-│ ├── schema/           # تعريفات الجداول
-│ │ ├── users.ts
-│ │ ├── academies.ts
-│ │ ├── players.ts
-│ │ ├── evaluations.ts
-│ │ ├── coach-notes.ts
-│ │ ├── player-videos.ts
-│ │ ├── player-stats.ts
-│ │ └── index.ts
-│ ├── relations.ts      # العلاقات بين الجداول
-│ ├── types.ts         # أنواع TypeScript
-│ ├── validators.ts     # مدخلات Zod
-│ ├── seed.ts          # بيانات أولية
-│ ├── db.ts            # اتصال قاعدة البيانات
-│ └── index.ts         # تصدير كل شيء
-├── drizzle.config.ts   # إعدادات Drizzle
+platform/
+├── apps/
+│   ├── web/                          # Next.js - المنصة + صفحة الهبوط
+│   │   ├── app/
+│   │   │   ├── (landing)/            # صفحة الهبوط
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── standard/page.tsx
+│   │   │   │   ├── join/page.tsx
+│   │   │   │   └── explore/page.tsx
+│   │   │   │
+│   │   │   ├── (dashboard)/          # لوحة التحكم
+│   │   │   │   ├── layout.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── players/
+│   │   │   │   ├── evaluations/
+│   │   │   │   ├── academy/
+│   │   │   │   └── scout/
+│   │   │   │
+│   │   │   ├── (public)/             # صفحات عامة
+│   │   │   │   ├── players/[id]/page.tsx
+│   │   │   │   └── academies/[id]/page.tsx
+│   │   │   │
+│   │   │   └── api/v1/               # الـ API كامل
+│   │   │       ├── players/
+│   │   │       ├── evaluations/
+│   │   │       ├── academies/
+│   │   │       ├── analytics/
+│   │   │       └── auth/
+│   │   │
+│   │   ├── components/
+│   │   │   ├── landing/
+│   │   │   ├── dashboard/
+│   │   │   ├── public/
+│   │   │   ├── shared/
+│   │   │   └── ui/                   # shadcn/ui
+│   │   │
+│   │   ├── lib/
+│   │   │   ├── db.ts                 # اتصال قاعدة البيانات
+│   │   │   ├── auth.ts
+│   │   │   ├── validations.ts
+│   │   │   ├── scoring.ts
+│   │   │   ├── geo.ts
+│   │   │   └── utils.ts
+│   │   │
+│   │   ├── stores/
+│   │   │   ├── use-auth.ts
+│   │   │   └── use-players.ts
+│   │   │
+│   │   ├── public/
+│   │   ├── next.config.js
+│   │   ├── tailwind.config.ts
+│   │   └── package.json
+│   │
+│   └── docs/                         # Nextra - توثيق المعيار + API
+│       ├── pages/
+│       │   ├── index.mdx
+│       │   ├── standard/
+│       │   ├── api/
+│       │   └── guides/
+│       ├── theme.config.jsx
+│       └── package.json
+│
+├── packages/
+│   ├── database/                     # Drizzle ORM - مخطط قاعدة البيانات
+│   │   ├── schema/
+│   │   │   ├── players.ts
+│   │   │   ├── evaluations.ts
+│   │   │   ├── academies.ts
+│   │   │   ├── users.ts
+│   │   │   └── index.ts
+│   │   ├── migrations/
+│   │   ├── seeds/
+│   │   │   └── governorates.ts
+│   │   └── package.json
+│   │
+│   ├── config/                       # الثوابت المشتركة
+│   │   ├── src/
+│   │   │   ├── positions.ts
+│   │   │   ├── governorates.ts
+│   │   │   ├── score-scale.ts
+│   │   │   ├── roles.ts
+│   │   │   └── index.ts
+│   │   └── package.json
+│   │
+│   ├── api-client/                   # TypeScript client للـ API
+│   │   ├── src/
+│   │   │   ├── players.ts
+│   │   │   ├── evaluations.ts
+│   │   │   ├── academies.ts
+│   │   │   ├── types.ts
+│   │   │   └── index.ts
+│   │   └── package.json
+│   │
+│   └── ui/                           # مكتبة المكونات المشتركة
+│       ├── src/
+│       │   ├── PlayerCard.tsx
+│       │   ├── EvaluationBadge.tsx
+│       │   ├── EvaluationRadar.tsx
+│       │   ├── MapView.tsx
+│       │   └── index.ts
+│       └── package.json
+│
+├── tooling/
+│   ├── eslint-config/
+│   ├── prettier-config/
+│   └── tsconfig/
+│
+├── pnpm-workspace.yaml
+├── turbo.json
 ├── package.json
-├── tsconfig.json
 └── README.md
 ```
 
-## التثبيت
+## 🚀 البدء السريع
+
+### المتطلبات الأساسية
+
+- Node.js 18+
+- pnpm 8+
+- PostgreSQL 14+
+
+### التثبيت والتشغيل
 
 ```bash
+# استنساخ المشروع
+git clone https://github.com/your-org/football-platform.git
+cd football-platform
+
 # تثبيت الاعتماديات
 pnpm install
 
-# بناء المشروع
-pnpm build
+# إعداد قاعدة البيانات
+cp packages/database/.env.example packages/database/.env
+# قم بتعديل متغيرات البيئة في packages/database/.env
+
+# تشغيل الترحيلات
+pnpm db:migrate
+
+# تشغيل بيئة التطوير
+pnpm dev
 ```
 
-## إعداد قاعدة البيانات
+### المتغيرات البيئية
 
-1. **إعداد متغيرات البيئة**
+```env
+# packages/database/.env
+DATABASE_URL="postgresql://username:password@localhost:5432/football_platform"
+
+# apps/web/.env.local
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key"
+```
+
+## 📊 معيار التقييم
+
+يعتمد معيار التقييم على أربعة محاور رئيسية:
+
+### 1. المهارات الفنية (30%)
+- التحكم بالكرة
+- التمرير
+- التصويب
+- المراوغة
+- اللعب بالرأس
+
+### 2. الصفات البدنية (25%)
+- السرعة
+- التحمل
+- القوة
+- الخفة
+
+### 3. الجوانب الذهنية (25%)
+- التركيز
+- اتخاذ القرار
+- الثقة بالنفس
+- العمل الجماعي
+
+### 4. الفهم التكتيكي (20%)
+- التموضع
+- قراءة اللعب
+
+## 🛠️ التقنيات المستخدمة
+
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Database**: PostgreSQL مع Drizzle ORM
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Documentation**: Nextra
+- **Build Tool**: Turbo (Monorepo)
+- **Package Manager**: pnpm
+
+## 📦 الحزم (Packages)
+
+### @platform/database
+مخطط قاعدة البيانات مع Drizzle ORM
+```bash
+pnpm db:generate  # إنشاء الترحيلات
+pnpm db:migrate   # تطبيق الترحيلات
+pnpm db:studio    # فتح Drizzle Studio
+```
+
+### @platform/config
+الثوابت والإعدادات المشتركة للمشروع
+
+### @platform/api-client
+عميل TypeScript للـ API مع أنواع محددة مسبقاً
+
+### @platform/ui
+مكونات React مشتركة قابلة لإعادة الاستخدام
+
+## 🎯 الأوامر المتاحة
 
 ```bash
-# ملف .env
-DATABASE_URL=postgresql://username:password@localhost:5432/hareifa_db
-NODE_ENV=development
+# تطوير
+pnpm dev              # تشغيل جميع التطبيقات في وضع التطوير
+pnpm dev:web          # تشغيل تطبيق الويب فقط
+pnpm dev:docs         # تشغيل التوثيق فقط
+
+# بناء
+pnpm build            # بناء جميع التطبيقات
+pnpm build:web        # بناء تطبيق الويب فقط
+pnpm build:docs       # بناء التوثيق فقط
+
+# جودة الكود
+pnpm lint             # فحص الكود
+pnpm type-check       # فحص الأنواع
+pnpm format           # تنسيق الكود
+
+# قاعدة البيانات
+pnpm db:generate      # إنشاء ملفات الترحيل
+pnpm db:migrate       # تطبيق الترحيلات
+pnpm db:push          # دفع المخطط إلى قاعدة البيانات
+pnpm db:studio        # فتح واجهة إدارة قاعدة البيانات
+pnpm db:seed          # ملء قاعدة البيانات ببيانات تجريبية
 ```
 
-2. **إنشاء جداول قاعدة البيانات**
+## 📚 التوثيق
 
-```bash
-# توليد ملفات الترحيل
-pnpm run generate
+- **التوثيق الكامل**: [docs.football-platform.eg](https://docs.football-platform.eg)
+- **API Reference**: [API Documentation](https://docs.football-platform.eg/api)
+- **معيار التقييم**: [Evaluation Standard](https://docs.football-platform.eg/standard)
 
-# تطبيق المخطط على قاعدة البيانات
-pnpm run push
-```
+## 🤝 المساهمة
 
-3. **إضافة البيانات الأولية**
+نرحب بالمساهمات من المجتمع! يرجى مراجعة [دليل المساهمة](docs/guides/contributing.mdx) لمعرفة كيفية المشاركة في تطوير المنصة.
 
-```bash
-# إضافة البيانات الأولية (محافظات مصر، مستخدم افتراضي، أكاديمية، لاعبين)
-pnpm run seed
-```
+### خطوات المساهمة
 
-## الأوامر المتاحة
+1. Fork المشروع
+2. إنشاء فرع جديد (`git checkout -b feature/amazing-feature`)
+3. تنفيذ التغييرات
+4. تنفيذ الاختبارات (`pnpm test`)
+5. إنشاء طلب سحب (Pull Request)
 
-```bash
-# أوامر التطوير
-pnpm dev          # بناء مع مراقبة التغييرات
-pnpm build        # بناء للإنتاج
-pnpm typecheck    # فحص أنواع TypeScript
+## 📞 التواصل والدعم
 
-# أوامر Drizzle
-pnpm run generate  # توليد ملفات الترحيل
-pnpm run push      # تطبيق التغييرات على قاعدة البيانات
-pnpm run studio    # فتح Drizzle Studio
+- **البريد الإلكتروني**: info@football-platform.eg
+- **تويتر**: [@FootballPlatformEG](https://twitter.com/FootballPlatformEG)
+- **فيسبوك**: [Football Platform](https://facebook.com/FootballPlatformEG)
+- **GitHub**: [Issues](https://github.com/your-org/football-platform/issues)
 
-# أوامر البيانات
-pnpm run seed      # إضافة البيانات الأولية
-```
+## 📄 الترخيص
 
-## الجداول الرئيسية
+هذا المشروع مرخص تحت ترخيص [MIT](LICENSE).
 
-### users
-- معلومات المستخدمين (مدير، مديري الأكاديميات، مدربين، كشافين، متطوعين)
-- أدوار: admin, regional_admin, academy_manager, coach, verified_scout, volunteer
+## 🙏 الشكر والتقدير
 
-### academies
-- معلومات الأكاديميات والمراكز والنوادي
-- أنواع: مركز_شباب، اكاديمية، نادي، مدرسة
-- 27 محافظة مصرية
+- جميع المدربين والكشافين الذين ساهموا في تطوير المعيار
+- الأكاديميات المشاركة في تجربة المنصة
+- مجتمع المطورين الذين دعموا المشروع
 
-### players
-- قلب المشروع - معلومات اللاعبين
-- معلومات شخصية، فنية، جسدية، أكاديمية
-- إمكانية اللاعبين من الشوارع (بدون أكاديمية)
+---
 
-### evaluations
-- تقييمات مفصلة للاعبين
-- تقييمات فنية، جسدية، عقلية، والالتزام
-- تقييمات من مدربين، كشافين، متطوعين
-
-### coach_notes
-- ملاحظات دورية من المدربين
-- الحضور، الأداء، ملاحظات
-
-### player_videos
-- فيديوهات اللاعبين (YouTube)
-- معلومات الفيديو، الصور المصغرة، الوسوم
-
-### player_stats
-- إحصائيات مجمعة للاعب
-- متوسطات التقييمات، آخر تقييم
-
-## استخدام الحزمة
-
-```typescript
-import { db, users, players, evaluations } from '@hareifa/database';
-
-// استعلام عن اللاعبين
-const allPlayers = await db.select().from(players);
-
-// إضافة لاعب جديد
-const newPlayer = await db.insert(players).values({
-  full_name_ar: 'أحمد محمد',
-  birth_date: new Date('2010-01-01'),
-  governorate: 'القاهرة',
-  primary_position: 'ST',
-  dominant_foot: 'right',
-  created_by: userId,
-});
-
-// استعلام مع علاقات
-const playerWithEvaluations = await db.query.players.findMany({
-  with: {
-    academy: true,
-    evaluations: true,
-    stats: true,
-  },
-});
-```
-
-## التحقق من البيانات
-
-```typescript
-import { insertPlayerSchema, insertEvaluationSchema } from '@hareifa/database';
-
-// التحقق من بيانات لاعب جديد
-const playerData = {
-  full_name_ar: 'أحمد محمد',
-  birth_date: new Date('2010-01-01'),
-  // ... باقي البيانات
-};
-
-const validatedPlayer = insertPlayerSchema.parse(playerData);
-```
-
-## البيانات الأولية
-
-الدالة `seed` تقوم بـ:
-- إضافة 27 محافظة مصرية
-- إنشاء مستخدم admin افتراضي (admin@hareifa.com / admin123456)
-- إنشاء أكاديمية نموذجية
-- إضافة 5 لاعبين تجريبيين
-- إضافة تقييمين تجريبيين
-- إضافة ملاحظات مدرب
-
-## المساهمة
-
-1. انسخ المشروع
-2. أنشئ فرعًا جديدًا (`git checkout -b feature/amazing-feature`)
-3. قم بالتغييرات
-4. أرسل التغييرات (`git commit -m 'Add amazing feature'`)
-5. ادفع الفرع (`git push origin feature/amazing-feature`)
-6. افتح Pull Request
-
-## الرخصة
-
-MIT License - انظر ملف LICENSE للتفاصيل.
-
-## الدعم
-
-لأي استفسارات أو مشاكل، يرجى التواصل مع فريق الحريفة.
+**منصة اللاعبين الشباب** - استكشف، قيم، طور 🌟⚽
