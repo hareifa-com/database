@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1778081899885,
+      "tag": "0000_odd_molly_hayes",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1778156682245,
+      "tag": "0001_vengeful_puck",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1778158674171,
+      "tag": "0002_magenta_klaw",
+      "breakpoints": true
+    }
+  ]
+}

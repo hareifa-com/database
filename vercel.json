@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "buildCommand": "cd api && npm run build",
+  "outputDirectory": "api/dist",
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api/index.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
